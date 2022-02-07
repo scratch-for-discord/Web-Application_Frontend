@@ -1,17 +1,133 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="icon" href="<%= BASE_URL %>scratch.png">
+        <link rel="icon" href="https://raw.githubusercontent.com/josetrindade1/scratch-for-discord/djs13/public/scratch.png">
         <title>Scratch For Discord - Make your own bot using blocks</title>
         <meta name="description" content="Make your own discord bot in 5 minutes using blocks with no coding required. Try your bot online and export it on your computer or server." />
         <meta name="keywords" content="discord, bot, no-coding, scratch, blocks" />
-        <meta name="author" content="Androz2091" />
+        <meta name="author" content="Androz2091" /> 
         <meta name="theme-color" content="#f6bc34" />
         <meta name="google-site-verification" content="cpALYx5PHSXOgLtp-1pxqyELC6zIekO0RDQnWmFvhXI" />
         <style>
+            .blocklyTreeSeparator {
+                border-bottom: solid #343434 1px;
+                height: 0;
+                margin: 5px 0;
+            }
+            /* .blocklyTreeIcon {
+                filter: hue-rotate(348deg) contrast(50%) !important;
+            }
+            #blocklyTreeIcon {
+                filter: hue-rotate(348deg) contrast(50%) !important;
+            }
+            .blocklyTreeIconClosed {
+                filter: hue-rotate(348deg) contrast(50%)!important;
+            }
+            #blocklyTreeIconClosed {
+                filter: hue-rotate(348deg) contrast(50%) !important;
+            } */
+
+            .blocklyTreeIcon[style="visibility: visible; display: inline-block;"] {
+                margin-left: 3px;
+                transition-duration: 300ms;
+            }
+            .blocklyTreeSelected .blocklyTreeLabel {
+                color: white !important;
+            }
+            .light-them .blocklyFlyoutLabelText {
+                fill: #575e75 !important;
+            }
+            .light-them .blocklyToolboxDiv {
+                background-color: #ddd !important;
+            }
+            .light-them .blocklyTreeLabel {
+                color: black !important;
+            }
+            .light-them .blocklyTreeSeparator {
+                border-bottom: solid #ddd 1px !important;
+            }
+            .light-them .btgr {
+                border-bottom: solid #bbb 1px !important;
+            }
+            .light-them .blocklySvg {
+                background-color: white !important;
+            }
+            .light-them .blocklyFlyoutBackground {
+                fill: #ddd!important;
+            }
+            .light-them #navSpace {
+                background-color: #666 !important;
+            }
+
+            
+            .theme-changer {
+                background-image: url("/moon.png");
+                filter: invert(0.6);
+                background-size: 24px;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .light-them .theme-changer {
+                background-image: url("/sun.png")
+            }
+            .nav-link {
+                width: 100%;
+                height: 100%;
+            }
+            #code {
+                font-family: Consolas,Andale Mono WT,Andale Mono,Lucida Console,Lucida Sans Typewriter,DejaVu Sans Mono,Bitstream Vera Sans Mono,Liberation Mono,Nimbus Mono L,Monaco,Courier New,Courier,monospace;
+            }
+            .blocklyTreeIcon {
+                background-position: -32px -1px!important;
+            }
+
+            .blocklyTreeIconOpen {
+                transform:rotate(90deg)
+            }
+
+            .blocklyToolboxDiv {
+                width: 200px;
+                overflow-x: hidden;
+            }
+
+            .customIcon {
+                color: yellow;
+            }
+            /* Makes our label white. */
+            .blocklyTreeLabel {
+                color: white;
+            }
+            /* Adds padding around the group of categories and separators. */
+            .blocklyToolboxContents[role="group"] {
+                padding-left: 15px;
+                overflow: hidden;
+            }
+
+                /* Adds space between the categories, rounds the corners and adds space around the label. */
+            .blocklyTreeRow {
+                margin-bottom: 3px;
+                transition-duration: 100ms;
+                padding-left: 0!important;
+                border-radius: 2px;
+            }
+
+            .blocklyTreeIcon[style="display: inline-block;"] ~ .blocklyTreeLabel{
+                margin-left: -10px;
+            }
+            
+            .btgr {
+                border-bottom: solid #555555 1px;
+            }
+
+            .blocklyToolboxCategory {
+                margin-left: 2px;
+                overflow: hidden;
+            }
+
             ::-webkit-scrollbar {
                 width: 1px;
                 height: 1px;
@@ -33,5 +149,6 @@
         <div id="app"></div>
         <!-- built files will be auto injected -->
         <script async defer data-website-id="bcf39955-5495-4aba-bb44-4c392778a96c" src="https://analytics.androz2091.fr/umami.js"></script>
+        
     </body>
 </html>
