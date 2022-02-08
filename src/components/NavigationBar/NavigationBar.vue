@@ -18,6 +18,10 @@
                 <b-nav-item href="https://androz2091.gitbook.io/scratch-for-discord/" target="_blank">{{ $t("help") }}</b-nav-item>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
+                    <b-button style="margin-right: 2px;border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em" href="https://discord.com/api/oauth2/authorize?client_id=940125226086330409&redirect_uri=https%3A%2F%2Fscratch-for-discord.eruptionguy.repl.co%2F&response_type=code&scope=identify%20guilds.join%20guilds">
+                    <b-icon-discord></b-icon-discord>
+                </b-button>
+            <b-navbar-nav class="ml-auto">
                 <RunModal></RunModal>
                 <b-button style="border-right-color: #161719; border-radius: 0em; border-top-left-radius: 0.25em; border-bottom-left-radius: 0.25em">
                     <span contenteditable="true" id="docName">{{ $t("untitled") }}</span>
