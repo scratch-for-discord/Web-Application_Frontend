@@ -44,9 +44,26 @@ The discord.js guide has [instructions for setting up a bot application](https:/
 
 ## Credits
 
-* Snowflake107 ([snowflake107](https://github.com/Snowflake107))
-* Discord.js ([discordjs/discord.js](https://github.com/discordjs/discord.js))
-* Blockly ([google/blockly](https://github.com/google/blockly))
-* And, of course, Discordblocks ([7coil/discordblocks](https://github.com/7coil/discord-blocks))
-* The original S4D ([Androz2091/Scratch-For-Discord](https://github.com/Androz2091/scratch-for-discord/))
-* Pull request 454 (S4D) ([mrredo-and-josetrindade1/Scratch-For-Discord](https://github.com/mrredo-and-josetrindade1/scratch-for-discord))
+### Staff
+
+#### Board
+
+<!-- -->
+
+#### Developers
+
+<!-- -->
+
+### Contributors 
+  
+ _For information about contribution in this repository, please check [CONTRIBUTING.md](/CONTRIBUTING.md)._
+  
+ [![Contributors][contributors-image]][contributors-link] 
+  
+ [contributors-image]: https://contrib.rocks/image?repo=scratch-for-discord/scratch-for-discord
+ [contributors-link]: https://github.com/scratch-for-discord/scratch-for-discord/graphs/contributors
+ 
+ 
+- [Discord.js](https://github.com/discordjs/)
+- [Blockly](https://github.com/google/blockly)
+- [Original S4D Concept](https://github.com/Androz2091/scratch-for-discord/)
