@@ -12,34 +12,11 @@ S4D 469 is forked from [the original S4D](https://scratch-for-discord.netlify.ap
 
 ![example](./examples/example2.png)
 
-## Run On Repl.it
-
-You can run your bot on repl.it. To do so, click the download link at the top right corner of the website. Import these files in your repl.it project, and run the following commands in the "SHELL" tab:
-- `npm install`
-- `node bot.js` (or hit the Run button)
-
-And you're done!
-
-## Installation
-
-To run Scratch For Discord, follow these steps:
-
-* Clone the project. Run `git clone https://github.com/frostzzone/scratch-for-discord`.
-* Run `yarn install` to install project dependencies.
-* Run `yarn start` to start the development server.
-* Go to `http://localhost:3000`!
-
 ## How to set up your bot
 
 The discord.js guide has [instructions for setting up a bot application](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot). Once you've followed the instructions you can paste the bot token into the "Connect to Discord with token..." block. The next page in the guide shows how to invite the bot to a server.
 
-## Desktop Apps
-**[Click Here](https://androz2091.github.io/scratch-for-discord/download/index.html)** to download desktop version of **scratch-for-discord**.
-
-## Android App
-**[Google Play Store](https://play.google.com/store/apps/details?id=com.snowflakestudio.scratchfordiscord)**
-
-### Preview
+## Preview
 ![preview](./examples/preview.png)
 
 ## Credits
