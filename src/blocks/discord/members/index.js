@@ -23,3 +23,4 @@ import "./member_channel_perm";
 import "./member_dynamic_icon";
 import "./get_user_banner";
 import "./member_banner";
+import "./user_getter"

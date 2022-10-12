@@ -2693,7 +2693,6 @@ export default (Blockly, value, searching) => {
             <label text="ㅤ" web-class="boldtext"></label>
         </category> 
         <category name="{{ TOOLBOX_MEMBERS }}" colour="#187795">
-        
             <label text="%{BKY_FIND_MEMBER}"></label>
             <block type="s4d_get_member"></block>
             <block type="jg_members_get_member_by_id">
@@ -2707,6 +2706,12 @@ export default (Blockly, value, searching) => {
             <block type="s4d_get_all_member"></block>
             <block type="ahq_members_get_random_member_in_server"/>
             <label text="%{BKY_MEMBER_INFORMATIONS}"></label>
+            <block type="user_getter"></block>
+            <!--
+            <block type="user_getter">
+            <field name = "getter">.bot</field>
+            </block>
+            
             <block type="s4d_member_exist"/>
             <block type="s4d_member_id"></block>
             <block type="s4d_member_discriminator"></block>
@@ -2720,12 +2725,20 @@ export default (Blockly, value, searching) => {
             <block type="s4d_joined_at"></block>
             <block type="s4d_created_at"></block>
             <block type="s4d_member_is_bot"/>
+            -->
             <block type="jg_monaco_members_member_is_timed_out"/>
             <label text="These blocks only work if a member is timed out."/>
             <block type="monaco_member_timeout_until"/>
             <block type="monaco_member_timeout_until_timestamp"/>
-            <label text="Information about a Server Member (6 options)"></label>
+            <label text="Information about a Server Member"></label>
+            <!--
+            <block type="user_getter">
+            <field name = "getter">.bannable</field>
+            </block>
+                -->
+            <!--
             <block type="jg_members_member_is_value"/>
+            -->
             <label text="Blocks for users"></label>
             <!--
             <block type="jg_members_user_accent_color"/>
