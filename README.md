@@ -23,6 +23,7 @@ And you're done!
 ## Installation
 
 Want to help in the production alongside other developers? Here's how:
+
 Note that you need to host Scratch For Discord, and then code, which can be done by following the steps below: (Recommended Choices: Github, Vscode and Replit) 
 
 * Clone the project. Run `git clone https://github.com/frostzzone/scratch-for-discord`.
