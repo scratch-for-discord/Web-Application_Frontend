@@ -22,7 +22,8 @@ And you're done!
 
 ## Installation
 
-To run Scratch For Discord, follow these steps:
+Want to help in the production alongside other developers? Here's how:
+Note that you need to host Scratch For Discord, and then code, which can be done by following the steps below: (Recommended Choices: Github, Vscode and Replit) 
 
 * Clone the project. Run `git clone https://github.com/frostzzone/scratch-for-discord`.
 * Run `yarn install` to install project dependencies.
@@ -32,12 +33,6 @@ To run Scratch For Discord, follow these steps:
 ## How to set up your bot
 
 The discord.js guide has [instructions for setting up a bot application](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot). Once you've followed the instructions you can paste the bot token into the "Connect to Discord with token..." block. The next page in the guide shows how to invite the bot to a server.
-
-## Desktop Apps
-**[Click Here](https://androz2091.github.io/scratch-for-discord/download/index.html)** to download desktop version of **scratch-for-discord**.
-
-## Android App
-**[Google Play Store](https://play.google.com/store/apps/details?id=com.snowflakestudio.scratchfordiscord)**
 
 ### Preview
 ![preview](./examples/preview.png)
