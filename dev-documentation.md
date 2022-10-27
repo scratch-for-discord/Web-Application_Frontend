@@ -1,3 +1,13 @@
+# Basic knowlege
+### Some infos you must know about this project
+## NO JAVASCRIPT
+This is a TypeScript project, I don't want any JS files 🤣
+## Running and building S4D
+If you don't know how to read a package.json file here you go: 
+- Run the website : `npm run dev`
+- Build for production : `npm run build`
+- Run the preview (idk who uses this) : `npm run preview`
+
 # Project management 
 
 The goal of the new version of scratch for discord is to keep the build time minimal and keep the project organized and easy to read. This piece of documentation will guide you through organizing the files and the project structure.
