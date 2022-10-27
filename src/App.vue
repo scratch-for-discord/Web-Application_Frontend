@@ -24,6 +24,9 @@ import "./blocks/"
 
 // anyways heres some other manual loading because im not gonna add all of these to blocks's index.js file
 
+import './New Blocks/Base'
+import './New Blocks/Messages'
+
 import "./blocks/discord/base/";
 import "./blocks/discord/message-event/";
 import "./blocks/discord/reaction-event/";
@@ -366,7 +369,7 @@ export default {
 #blocklySpace {
     position: absolute;
     width: 100%;
-    height: calc(100% - 66px);
+    height: calc(100%);
 }
 
 .boldtext {

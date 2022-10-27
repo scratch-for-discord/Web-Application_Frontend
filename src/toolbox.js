@@ -1200,7 +1200,47 @@ export default (Blockly, value, searching) => {
         
         <sep class="bt"/>
         <category name="{{ TOOLBOX_BASE }}" colour="#F46580">
-        
+
+        <label text="Setup and secure your bot"/>
+
+        <block type="s4d_login">
+        <value name="TOKEN">
+            <shadow type="text">
+                <field name="TEXT">Your bot token</field>
+            </shadow>
+        </value>
+    </block>
+
+    <block type='s4d_env'>
+        <value name="VALUE">
+            <shadow type="text">
+                <field name="TEXT">token</field>
+            </shadow>
+        </value>
+    </block>
+
+    <label text="Runs when the bot is online or when the code is running"/>
+
+    <block type='on_bot_code_start'/>
+
+    <label text="Infos and actions about the bot"/>
+
+    <block type='s4d_bot_amount_info'/>
+
+    <block type='s4d_set_bot_game_stream' />
+
+    <block type='s4d_bot_shutdown_stop'/>
+
+
+
+
+
+
+
+
+
+
+      <!--  
         <label text="%{BKY_MANDATORY_BLOCKS}" web-class="boldtext"></label>
             <block type="s4d_login">
                 <value name="TOKEN">
@@ -1243,8 +1283,18 @@ export default (Blockly, value, searching) => {
 		    <block type="get_cpu_uptime"/>
 			<block type="cpu"/>
             <label text="ㅤ" web-class="boldtext"></label>
+            -->
         </category>
         <category name="{{ TOOLBOX_E_MESSAGES }}" colour="#4C97FF">
+
+        <label text = "Events releated to messages"/>
+        <block type='s4d_on_message_typing_event'/>
+        <label text = "Blocks for message context and info"/>
+        <block type='s4d_message_context'/>
+        <block type='s4d_message_infos'/>
+
+
+
             <!--
             <category name="Handling" colour="#4C97FF"/>
             <category name="Embeds" colour="#4c8eff">
@@ -1253,7 +1303,6 @@ export default (Blockly, value, searching) => {
             </category>
             <category name="Reactions" colour="#4c82ff"/>
             <category name="Webhooks" colour="#4c76ff"/>
-            -->
 
             <label text="%{BKY_MESSAGE_RELATED_BLOCKS}" web-class="boldtext"></label>
 			
@@ -1266,9 +1315,9 @@ export default (Blockly, value, searching) => {
             <block type="s4d_message_channel"></block>
             <block type="frost_message_category"></block>
             <block type="s4d_message_guild"></block>
-            <!--
+            
                 <block type = 'lime_s4d_message_context'/>
-            -->
+            
 
             <label text="%{BKY_MESSAGE_INFORMATIONS}"></label>
 
@@ -1280,11 +1329,11 @@ export default (Blockly, value, searching) => {
             <block type="s4d_mentioned_member"></block>
             <block type="s4d_mentioned_channel"></block>
             <block type="s4d_mentioned_role"></block>
-            <!--
+            
                 <block type= 'lime_s4d_message_attributes_content_author_id_timestamp'/>
-            -->
+            
             <block type='lime_msg_author_attributes'/>
-
+            -->
             <label text="Attributes of the message"></label>
             <block type="jg_message_mentioned_member_number_on_message">
                 <value name="INDEX">

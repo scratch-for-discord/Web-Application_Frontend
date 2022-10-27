@@ -139,7 +139,8 @@ Blockly.Blocks[blockName] = {
     }, onchange: function () {
         let drpVlu = this.getFieldValue('getter')
         let BlockValuesSet = (color, output, outputBool, label1, label2, label3) => {
-            this.setColour(color)
+
+            if (color != null) this.setColour(color)
             if (output == '') {
                 this.setOutput(outputBool)
             } else {
@@ -157,48 +158,49 @@ Blockly.Blocks[blockName] = {
             case ".dmChannel": case ".flags":
 
                 if (drpVlu != '.accentColor' || drpVlu != '.createdTimestamp') {
-                    BlockValuesSet('user_getter', '#5ba58c', 'String', true,
-                        ["main_text", "On the user"], ["secondary_text", "get his"], ["tertiary_text", ""])
+                    BlockValuesSet('#5ba58c', 'String', true,
+                        "On the user", "get his", "")
 
                 } else if (drpVlu == '.client') {
-                    BlockValuesSet('user_getter', '#187795', null, true,
-                        ["main_text", "On the user"], ["secondary_text", "get his"], ["tertiary_text", "info"])
+                    BlockValuesSet('#187795', null, true,
+                        "On the user", "get his", "info")
 
                 } else if (drpVlu == '.dmChannel' || drpVlu == '.flags') {
-                    BlockValuesSet('user_getter', '#a55b80', null, true,
-                        ["main_text", "On the user"], ["secondary_text", "get his"], ["tertiary_text", ""])
+                    BlockValuesSet('#a55b80', null, true,
+                        "On the user", "get his", "")
 
                 } else {
-                    BlockValuesSet('user_getter', '#5b67a5', 'Number', true,
-                        ["main_text", "On the user"], ["secondary_text", "get his"], ["tertiary_text", ""])
+                    BlockValuesSet('#5b67a5', 'Number', true,
+                        "On the user", "get his", "")
                 }
                 break
 
             case ".bot": case ".system": //bool output
-                BlockValuesSet('user_getter', '#5b80a5', 'Boolean', true,
-                    ["main_text", "Is the user"], ["secondary_text", "a"], ["tertiary_text", "account?"])
+                BlockValuesSet('#5b80a5', 'Boolean', true,
+                    "Is the user", "a", "account?")
                 break
 
             case "EXISTS":
-                BlockValuesSet('user_getter', '#5b80a5', 'Boolean', true,
-                    ["main_text", "Does the user"], ["secondary_text", ""], ["tertiary_text", "?"])
+                BlockValuesSet('#5b80a5', 'Boolean', true,
+                    "Does the user", "", "?")
                 break
 
             case ".bannable": case ".kickable": case ".moderatable": case ".partial": case ".pending":
             case ".manageable":
-                BlockValuesSet('user_getter', '#5b80a5', 'Boolean', true,
-                    ["main_text", "Is the user"], ["secondary_text", ""], ["tertiary_text", "?"])
+                BlockValuesSet('#5b80a5', 'Boolean', true,
+                    "Is the user", "", "?")
                 if (drpVlu == '.pending') this.getField("main_text").setValue("Did the user")
                 break
 
             default: // default aka Number Value (for now accent color is the default)
-                BlockValuesSet('user_getter', '#5b67a5', 'Number', true,
-                    ["main_text", "On the user"], ["secondary_text", "get his"], ["tertiary_text", ""])
+                BlockValuesSet('#5b67a5', 'Number', true,
+                    "On the user", "get his", "")
                 break
         }
     }
 }
 Blockly.JavaScript[blockName] = function (block) {
+
     var property = block.getFieldValue('getter')
     var member = Blockly.JavaScript.valueToCode(block, 'member', Blockly.JavaScript.ORDER_ATOMIC)
     let code = ''

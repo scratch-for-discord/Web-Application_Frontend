@@ -59,6 +59,12 @@ const blockData = {
 Blockly.Blocks[blockName] = {
     init: function () {
         this.jsonInit(blockData);
+    }, onchange: function () {
+        try {
+            console.warn(this)
+        } catch (e) {
+            console.warn(this)
+        }
     }
 };
 

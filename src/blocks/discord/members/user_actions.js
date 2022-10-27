@@ -57,7 +57,7 @@ const blockData = {
         {
             "type": "field_label_serializable",
             "name": "tertiary_text",
-            "text": "with reason"
+            "text": "with options"
         },
         {
             "type": "input_value",
@@ -94,8 +94,8 @@ Blockly.JavaScript['member_actions'] = function (block) {
     let server = Blockly.JavaScript.valueToCode(block, 'server', Blockly.JavaScript.ORDER_ATOMIC);
     let action = block.getFieldValue('action');
     let member = Blockly.JavaScript.valueToCode(block, 'member', Blockly.JavaScript.ORDER_ATOMIC);
-    let reason = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
+    let options = Blockly.JavaScript.valueToCode(block, 'reason', Blockly.JavaScript.ORDER_ATOMIC);
 
-    let code = '...;\n';
+    let code = `${server}${action}(,reason: ${})\n`;
     return code;
 };
