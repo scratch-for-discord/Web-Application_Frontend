@@ -1,2 +1,0 @@
-import "./disc"
-import "./ch"

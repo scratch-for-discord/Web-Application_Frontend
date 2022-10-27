@@ -1,2 +1,0 @@
-import "./getObjVar"
-import "./blocks"

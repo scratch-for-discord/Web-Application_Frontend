@@ -1,2 +1,0 @@
-import "./badword";
-import "./censor";
