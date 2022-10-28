@@ -9,14 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sweetalert2/theme-dark": "^5.0.12",
     "blockly": "^9.0.1",
+    "prismjs": "^1.29.0",
+    "sweetalert2": "^11.6.4",
     "url": "^0.11.0",
     "vite-plugin-static-copy": "^0.11.0",
-    "vue": "^3.2.37",
-    "vue-sweetalert2": "^5.0.5"
+    "vue": "^3.2.37"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "eslint": "^8.26.0",
     "eslint-plugin-vue": "^9.6.0",
