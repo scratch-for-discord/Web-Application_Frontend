@@ -12,7 +12,7 @@ import NavBar from './components/NavBar.vue'
 
 
 // Blocks imports
-import './Blocks/theCustomBlocks'
+import './blocks/base'
 
 
 const DarkTheme = Blockly.Theme.defineTheme('a', {

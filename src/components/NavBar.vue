@@ -6,7 +6,7 @@
             <h2>Scratch for Discord</h2>
         </div>
 
-        <a href="#">JavaScript Code</a>
+        <a href="#" @click="sayCode()">JavaScript Code</a>
         <a href="#">Examples</a>
         <a href="#">Socials</a>
         <a href="#">Changelog</a>
@@ -17,26 +17,12 @@
 </template>
 
 <script setup lang="ts">
+import Blockly from "blockly/core";
+import { javascriptGenerator } from "blockly/javascript";
 
-// I am trying to integrate the block count, un-comment this to test it!
-
-// import Blockly from "blockly/core";
-
-// let totalBlocks: number
-// let reload = 1
-
-// function dosmth() {
-//     /*  Sets the totalBlocks var to the total blocks and it's supposed
-//     to force reload the component but it doesn't work...
-//     */
-//     try {
-//         totalBlocks = Blockly.getMainWorkspace().getAllBlocks(false).length
-//         reload += 1
-//     } catch {
-//         console.error('smth')
-//     }
-//     reload += 1
-// }
+function sayCode() {
+    console.log(javascriptGenerator.workspaceToCode(Blockly.getMainWorkspace()))
+}
 </script>
 
 

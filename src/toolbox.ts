@@ -30,12 +30,16 @@ let toolboxString = `<xml>
         </category>
         <category name="Variables" custom="VARIABLE" colour="%{BKY_VARIABLES_HUE}">
             </category>
-    <!-- <category name="Stocks" colour="%{BKY_LOOPS_HUE}">
-            <block type="stock_buy_prog"></block>
-            <block type="stock_fetch_price"></block>
-        </category> -->
-        <category name="Test" colour="#ffffff">
-            <block type="string_length2"/>
+
+            
+        <category name='Base' colour='#c75bc2'>
+
+        <block type='on_bot_code_start'/>
+        <block type='bot_amount_info'/>
+        <block type="bot_shutdown_stop"/>
+        <block type="set_bot_game_stream"/>
+
+        <block type="env"/>
         </category>
         </xml>`
 

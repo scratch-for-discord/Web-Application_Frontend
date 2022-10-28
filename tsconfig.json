@@ -26,5 +26,8 @@
     {
       "path": "./tsconfig.node.json"
     }
-  ]
+  ],
+  "types": [
+    "vue-sweetalert2"
+  ],
 }

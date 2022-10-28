@@ -10,7 +10,7 @@
 ## Example
 ![example1](src/assets/example.png)
 
-## Run On Repl.it
+## Run it on Repl.it
 You can run your bot on repl.it. To do so, click the download link at the top right corner of the website. Import these files in your repl.it project, and run the following commands in the "SHELL" tab:
 
 - `npm i`
