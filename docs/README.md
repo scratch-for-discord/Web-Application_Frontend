@@ -13,4 +13,4 @@
 ## Example
 
 - ![example](../src/assets/example.png)
-- ![website-preview1](..src/assets/Website%20%preview.png)
+- ![website-preview1](../src/assets/Website%20preview.png)
