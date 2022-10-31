@@ -12,5 +12,5 @@
 
 ## Example
 
-- ![example](src/assets/example.png)
-- ![website-preview1](src/assets/Website%20preview.png)
+- ![example](../src/assets/example.png)
+- ![website-preview1](../src/assets/example.png)
