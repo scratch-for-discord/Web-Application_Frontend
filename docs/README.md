@@ -1,6 +1,6 @@
 # SCRATCH FOR DISCORD v2
 
-![Shutterstock Website Under Construction](https://www.shutterstock.com/image-vector/website-under-construction-page-flat-isometric-1081029980)
+![Shutterstock Website Under Construction](https://image.shutterstock.com/image-vector/website-under-construction-page-flat-600w-1081029980.jpg)
 
 🐱 Make your own Discord bot using blocks!
 
@@ -13,4 +13,4 @@
 ## Example
 
 - ![example](../src/assets/example.png)
-- ![website-preview1](../src/assets/Website%20preview.png)
+- ![website-preview1](src/assets/Website%20preview.png)
