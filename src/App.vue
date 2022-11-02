@@ -6,7 +6,7 @@ import { ref } from "vue";
 import BlocklyComponent from "./components/BlocklyComponent.vue";
 import { toolboxString } from './toolbox'
 import { javascriptGenerator } from "blockly/javascript";
-
+import './sc'
 // Components
 import NavBar from './components/NavBar.vue'
 

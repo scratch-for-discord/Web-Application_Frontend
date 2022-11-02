@@ -11,6 +11,7 @@
         <a href="#">Socials</a>
         <a href="#">Changelog</a>
         <a href="#" class="endButton">Credits</a>
+        <a style="position: absolute; right: 5px;" href="https://github.com/login/oauth/authorize?scope=repo&client_id=b6d2e4d50218cbda081b">Github Sign In</a>
         <!-- <a href="#" class="endButton" :key="reload">Number of blocks:
             {{ totalBlocks }}</a> -->
     </div>
