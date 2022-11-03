@@ -11,7 +11,8 @@
         <a href="#">Socials</a>
         <a href="#">Changelog</a>
         <a href="#" class="endButton">Credits</a>
-        <a style="position: absolute; right: 5px;" href="https://github.com/login/oauth/authorize?scope=repo&client_id=b6d2e4d50218cbda081b">Github Sign In</a>
+        <a id="gitScUi" style="right: 0px; visibility: hidden;" @click="launchGitUi()">Github Source Control</a>
+        <a style="right: 0px; position: absolute;" href="https://github.com/login/oauth/authorize?scope=repo&client_id=b6d2e4d50218cbda081b">Github Sign In</a>
         <!-- <a href="#" class="endButton" :key="reload">Number of blocks:
             {{ totalBlocks }}</a> -->
     </div>
@@ -23,7 +24,6 @@ import { javascriptGenerator } from "blockly/javascript";
 import Swal from "sweetalert2";
 import 'prismjs/themes/prism-tomorrow.css'
 import Prism from 'prismjs'
-
 
 function sayCode() {
 
@@ -66,6 +66,26 @@ function sayCode() {
         confirmButtonText: `Copy to clipboard`
     })
 }
+
+function launchGitUi() {
+     Swal.fire({
+                title: "Github Source Control",
+                  input: 'select',
+                                inputOptions: {
+                                    't1': 'Repository Selection',
+                                    't3': 'Pull',
+                                    't4': 'Push',
+                                    't5': 'Logout',
+                                },
+                                inputPlaceholder: 'Select a Option',
+                                showCancelButton: true,
+            }).then(async (result) => {
+                console.log(result)
+            })
+
+}
+
+
 </script>
 
 

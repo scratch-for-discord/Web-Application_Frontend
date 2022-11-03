@@ -1,11 +1,12 @@
 import fetch from 'cross-fetch';
-const urlParams = new URLSearchParams(window.location.search);
+var url = window.location.search
+const urlParams = new URLSearchParams(url);
 const code = urlParams.get('code')
 
-
 if (code) {
-    console.log(code)
-
+    var changeUrl: any = new URL(document.location.href);
+    changeUrl.searchParams.delete('code');
+    window.history.replaceState({}, document.title, changeUrl);
 const body = {
     "code": code,
     "client_secret": import.meta.env.VITE_SEC,
@@ -20,13 +21,44 @@ fetch('https://s4d-api.xl83.dev/api/v1/user/githubsc/', {
 	headers: {'Content-Type': 'application/json', "Accept": 'application/json'}
 }).then(res => {
     res.json().then( res => {
-        console.log(res)
+        var code: string = res.code
+        if (code) {
+            localStorage.setItem("accessToken", res.code)
+            localStorage.setItem("isTokenValid", "true")
+            updateGitUi("show")
+        } else {
+            alert("There was a error, please refresh and try login again")
+        }
     })
 })
 
+} else {
+console.log("no code")
+    if (localStorage.getItem("accessToken")) {
+        fetch('https://api.github.com/user/repos', {
+            headers: {
+              Authorization: `token ${localStorage.getItem("accessToken")}`
+            }
+          })
+            .then(res => res.json())
+            .then(json => {
+                if (json.message == "Bad credentials") {
+                    localStorage.setItem("isTokenValid", "false")
+                    updateGitUi("hide")
+                } else {
+                    updateGitUi("show")
+                }
+            });
+    }
 }
 
-
-
+function updateGitUi(type: string) {
+    var ui = document.getElementById("gitScUi")
+    if (type == "show") {
+       ui!.style.visibility = "visible"
+    } else {
+       ui!.style.visibility = "hidden"
+    }
+}
 
 export {}
