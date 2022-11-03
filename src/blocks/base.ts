@@ -106,9 +106,9 @@ Blockly.Blocks['bot_amount_info'] = {
         const getter = this.getFieldValue("getter");
         let BlockValuesSet = (color: string, output: string, outputBool: boolean) => {
             this.setColour(color)
-            if (output == null) { this.setOutput(outputBool) } else { this.setOutput(outputBool, output) }
+            output!=null ? this.setOutput(outputBool, output) : this.setOutput(outputBool);
         }
-        if (getter == 'startup') { BlockValuesSet('#5b67a5', 'Date', true) } else { BlockValuesSet('#5b67a5', 'Number', true) }
+        BlockValuesSet('#5b67a5', getter=='startup'?'Date':'Number', true)
     }
 }
 
