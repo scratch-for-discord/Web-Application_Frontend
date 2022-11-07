@@ -2,7 +2,7 @@ import Blockly from 'blockly'
 import { javascriptGenerator } from 'blockly/javascript'
 
 // When bot starts event
-Blockly.defineBlocksWithJsonArray([{
+Blockly.defineBlocksWithJsonArray ([{
     "type": "on_bot_code_start",
     "message0": "%1 %2 %3 %4",
     "args0": [
@@ -41,12 +41,10 @@ Blockly.defineBlocksWithJsonArray([{
 javascriptGenerator['on_bot_code_start'] = function (block: any) {
     var event = block.getFieldValue('event');
     var toCode = javascriptGenerator.statementToCode(block, 'code');
-    var code = ''
-    if (event == 'bot') {
-        code = `s4d.client.on('ready', async () => {\n${toCode}\n});\n`;
-    } else if (event != 'bot') {
-        code = `\n${toCode}\n`
-    }
+    var code = event == 'bot'
+        ? code = `s4d.client.on('ready', async () => {\n${toCode}\n});\n`
+        : code = `\n${toCode}\n`
+    ;
     return code;
 };
 
@@ -55,8 +53,7 @@ javascriptGenerator['on_bot_code_start'] = function (block: any) {
 const s4d_bot_amount_info_data = {
     "type": "bot_amount_info",
     "message0": "Bot's %1",
-    "args0": [
-        {
+    "args0": [{
             "type": "field_dropdown",
             "name": "getter",
             "options": [
@@ -89,8 +86,7 @@ const s4d_bot_amount_info_data = {
                     'timsetamp'
                 ]
             ]
-        },
-    ],
+        }],
     "colour": "#4C97FF",
     "output": "String",
     "inputsInline": true,
@@ -100,24 +96,24 @@ const s4d_bot_amount_info_data = {
 
 Blockly.Blocks['bot_amount_info'] = {
     init: function () {
-        this.jsonInit(s4d_bot_amount_info_data)
+        this.jsonInit(s4d_bot_amount_info_data);
     },
     onchange: function () {
         const getter = this.getFieldValue("getter");
         let BlockValuesSet = (color: string, output: string, outputBool: boolean) => {
-            this.setColour(color)
-            output!=null ? this.setOutput(outputBool, output) : this.setOutput(outputBool);
+            this.setColour(color);
+            output!=null ? this.setOutput(outputBool,output) : this.setOutput(outputBool);
         }
-        BlockValuesSet('#5b67a5', getter=='startup'?'Date':'Number', true)
+        BlockValuesSet('#5b67a5', getter=='startup'?'Date':'Number', true);
     }
 }
 
 javascriptGenerator['bot_amount_info'] = function (block: any) {
     const getter = block.getFieldValue("getter");
-    let code: string = ""
+    let code: string;
     switch (getter) {
         case 'pings':
-            code = "s4d.client.ws.ping"
+            code = "s4d.client.ws.ping";
             break
 
         case 'servers':
@@ -137,10 +133,10 @@ javascriptGenerator['bot_amount_info'] = function (block: any) {
             break
 
         case 'startup':
-            code = "String(s4d.client.readyAt)"
+            code = "String(s4d.client.readyAt)";
             break
         case 'timsetamp':
-            code = 's4d.client.readyTimestamp'
+            code = 's4d.client.readyTimestamp';
             break
     }
     return [code, javascriptGenerator.ORDER_NONE];
@@ -214,7 +210,7 @@ Blockly.Blocks['set_bot_game_stream'] = {
     },
 
     init: function () {
-        this.jsonInit(s4d_set_bot_game_stream_data)
+        this.jsonInit(s4d_set_bot_game_stream_data);
         let options = [
             [
                 "Listening",
@@ -236,28 +232,31 @@ Blockly.Blocks['set_bot_game_stream'] = {
                 "Streaming",
                 "STREAMING"
             ]
-        ]
+        ];
         this.appendDummyInput()
-            .appendField(new Blockly.FieldDropdown(options, this.validate), 'TYPE');
-    }, updateConnections: function (newValue: any) {
+            .appendField(new Blockly.FieldDropdown(options, this.validate), 'TYPE')
+        ;
+    },
+    
+    updateConnections: function (newValue: any) {
         this.removeInput('URL', /* no error */ true);
         if (newValue == 'STREAMING') {
             this.appendValueInput('URL')
                 .appendField(new Blockly.FieldLabelSerializable("with URL"), "url_text")
+            ;
         }
     }
+
 };
 
 javascriptGenerator['set_bot_game_stream'] = function (block: any) {
     const type = block.getFieldValue("TYPE");
     const game = javascriptGenerator.valueToCode(block, "GAME", javascriptGenerator.ORDER_ATOMIC);
     const OIFD = block.getFieldValue("OIFD");
-    let code = ''
-    if (type == 'STREAMING') {
-        const url = javascriptGenerator.valueToCode(block, "URL", javascriptGenerator.ORDER_ATOMIC);
-        code = `s4d.client.user.setActivity(${game}, { type: "STREAMING", url: ${url}});`;
-    } else if (type != 'STREAMING')
-        code = `s4d.client.user.setPresence({status: "${OIFD}",activities:[{name:${game},type:"${type}"}]}); \n`;
+    let code = type == 'STREAMING'
+        ? `s4d.client.user.setActivity( ${game}, { type:"STREAMING", url: ${javascriptGenerator.valueToCode(block, "URL", javascriptGenerator.ORDER_ATOMIC)} } );`
+        : `s4d.client.user.setPresence({ status: "${OIFD}", activities: [{ name:${game},type:"${type}" }] });`
+    ;
     return code;
 };
 
@@ -267,21 +266,19 @@ Blockly.defineBlocksWithJsonArray([{
     "type": "env",
     "message0": "process.env.%1",
     "colour": "#3333ff",
-    "args0": [
-        {
+    "args0": [{
             "type": "input_value",
             "name": "VALUE",
             "check": "String"
-        },
-    ],
+    }],
     "tooltip": null,
     "output": ["String", "Env"],
     "helpUrl": ""
-}])
+}]);
 
 javascriptGenerator['env'] = function (block: any) {
     const value = javascriptGenerator.valueToCode(block, "VALUE", javascriptGenerator.ORDER_ATOMIC);
-    const replacedValue = value.replace("'", '').replace("'", '')
+    const replacedValue = value.replace("'", '').replace("'", '');
     const code = [`process.env.${replacedValue}`, javascriptGenerator.ORDER_NONE];
     return code;
 };
