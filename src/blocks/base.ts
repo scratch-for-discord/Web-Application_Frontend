@@ -110,34 +110,34 @@ Blockly.Blocks['bot_amount_info'] = {
 
 javascriptGenerator['bot_amount_info'] = function (block: any) {
     const getter: string = block.getFieldValue("getter");
-    let code: string = "";
+    let code: string = ``;
     switch (getter) {
         case 'pings':
-            code = "s4d.client.ws.ping";
+            code = `s4d.client.ws.ping`;
             break
 
         case 'servers':
-            code = "s4d.client.guilds.cache.size";
+            code = `s4d.client.guilds.cache.size`;
             break
 
         case 'channels':
-            code = "s4d.client.channels.cache.size";
+            code = `s4d.client.channels.cache.size`;
             break
 
         case 'users':
-            code = "s4d.client.users.cache.size";
+            code = `s4d.client.users.cache.size`;
             break
 
         case 'uptime':
-            code = "s4d.client.uptime";
+            code = `s4d.client.uptime`;
             break
 
         case 'startup':
-            code = "String(s4d.client.readyAt)";
+            code = `String(s4d.client.readyAt)`;
             break
 
         case 'timsetamp':
-            code = 's4d.client.readyTimestamp';
+            code = `s4d.client.readyTimestamp`;
             break
     }
     return [code, javascriptGenerator.ORDER_NONE];
