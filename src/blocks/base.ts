@@ -41,7 +41,7 @@ Blockly.defineBlocksWithJsonArray ([{
 javascriptGenerator['on_bot_code_start'] = function (block: any) {
     var event = block.getFieldValue('event');
     var toCode = javascriptGenerator.statementToCode(block, 'code');
-    var code = event == 'bot'
+    var code: string = event == 'bot'
         ? code = `s4d.client.on('ready', async () => {\n${toCode}\n});\n`
         : code = `\n${toCode}\n`
     ;
@@ -102,15 +102,15 @@ Blockly.Blocks['bot_amount_info'] = {
         const getter = this.getFieldValue("getter");
         let BlockValuesSet = (color: string, output: string, outputBool: boolean) => {
             this.setColour(color);
-            output!=null ? this.setOutput(outputBool,output) : this.setOutput(outputBool);
+            output!=null ? this.setOutput(outputBool, output) : this.setOutput(outputBool);
         }
         BlockValuesSet('#5b67a5', getter=='startup'?'Date':'Number', true);
     }
 }
 
 javascriptGenerator['bot_amount_info'] = function (block: any) {
-    const getter = block.getFieldValue("getter");
-    let code: string;
+    const getter: string = block.getFieldValue("getter");
+    let code: string = "";
     switch (getter) {
         case 'pings':
             code = "s4d.client.ws.ping";
@@ -135,6 +135,7 @@ javascriptGenerator['bot_amount_info'] = function (block: any) {
         case 'startup':
             code = "String(s4d.client.readyAt)";
             break
+
         case 'timsetamp':
             code = 's4d.client.readyTimestamp';
             break
