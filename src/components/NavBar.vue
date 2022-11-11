@@ -80,10 +80,42 @@ function launchGitUi() {
                                 inputPlaceholder: 'Select a Option',
                                 showCancelButton: true,
             }).then(async (result) => {
-                console.log(result)
+
+                    if (result.value == "t1") {
+                        var selectRepo = {}
+                    fetch('https://api.github.com/user/repos', {
+            headers: {
+              Authorization: `token ${localStorage.getItem("accessToken")}`
+            }
+          })
+            .then(res => res.json())
+            .then(json => {
+                console.log(json)
+                json.forEach(element => {
+                var name = element.name
+                console.log(name)
+                var newObj = {[name]: element.name}
+                Object.assign(selectRepo, newObj)
+                });
+                Swal.fire({
+                title: "Repo Selection",
+                  input: 'select',
+                                inputOptions: selectRepo,
+                                inputPlaceholder: 'Select a Option',
+                                showCancelButton: true,
+            }).then(async (result) => {
+                localStorage.setItem("repo", result.value)
+                Swal.fire({
+                title: `Succesfully Selected ${result.value}!`,
+            })
+            })
+                })
+                    }
             })
 
-}
+
+            
+            }
 
 
 </script>
