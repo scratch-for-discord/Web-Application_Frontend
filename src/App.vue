@@ -27,7 +27,7 @@ const DarkTheme = Blockly.Theme.defineTheme('a', {
     'flyoutOpacity': 0.5,
     'scrollbarColour': '#797979',
     'insertionMarkerColour': '#fff',
-    'insertionMarkerOpacity': 0.3,
+    'insertionMarkerOpacity': 1,
     'scrollbarOpacity': 0.01,
     'cursorColour': '#d0d0d0',
   },
