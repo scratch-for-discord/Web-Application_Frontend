@@ -135,6 +135,7 @@ import { javascriptGenerator } from "blockly/javascript";
 import Swal from "sweetalert2";
 import 'prismjs/themes/prism-tomorrow.css'
 import Prism from 'prismjs'
+
 function showCode() {
 
 
@@ -166,12 +167,12 @@ function showCode() {
     Swal.fire({
         title: '<strong class=\"text-white\">JavaScript Code</strong>',
         html: `<pre data-example-id="customHtml" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" class="code" style="text-align: start; word-wrap: break-word; overflow: auto">
-            <code style="word-wrap: break-word;">
+            <code style="word-wrap: break-word; background-color=#121212;">
                 ${Prism.highlight(code, Prism.languages.javascript, 'javascript')}
             </code>
         </pre>`,
         width: `70%`,
-        background: '#121212',
+        background: '#293448',
         color: '#fff',
         padding: `0%`,
         confirmButtonText: `Copy to clipboard`
@@ -185,6 +186,7 @@ aside {
     position: absolute;
     top: 0;
     left: 0;
+    margin-left: 0.1px;
     border-right: 1px solid #212b3d;
     width: 52px;
 }

@@ -2,7 +2,7 @@
 
 // Blockly & Packages Imports
 import Blockly, { Block } from 'blockly/core';
-import { onMounted, ref } from "vue";
+import { onMounted, ref, VueElement } from "vue";
 import BlocklyComponent from "./components/BlocklyComponent.vue";
 import { toolboxString } from './toolbox'
 import { javascriptGenerator } from "blockly/javascript";
@@ -10,11 +10,11 @@ import { javascriptGenerator } from "blockly/javascript";
 // Components
 import NavBar from './components/NavBar.vue'
 import SideNavBar from './components/SideNavBar.vue';
+import LoadingWindow from './components/LoadingWindow.vue';
 
 
 // Blocks imports
 import './blocks/base'
-
 
 const DarkTheme = Blockly.Theme.defineTheme('a', {
   'name': 'true_dark',
@@ -74,9 +74,18 @@ const options = {
 // Loading Code On workspace
 let codeToLoad;
 
-
 // const showCode = () => (code.value = javascriptGenerator.workspaceToCode(foo.value.workspace));
+// let loaded = false;
+// let key = 'false'
 
+// async function loadingScreen() {
+//   await new Promise(f => setTimeout(f, Math.floor(Math.random() * (5000 - 1000) + 1000)));
+//   loaded = true
+//   key = 'true'
+//   console.log(loaded)
+// }
+// await loadingScreen()
+// key = 'true'
 
 
 </script>
@@ -85,6 +94,7 @@ let codeToLoad;
 
   <div id="app">
     <!-- <NavBar /> -->
+    <!-- <LoadingWindow v-show="!loaded" :key="key" /> -->
     <SideNavBar />
     <BlocklyComponent id="blockly" :options="options" ref="foo"></BlocklyComponent>
     <!-- <p id="code">
