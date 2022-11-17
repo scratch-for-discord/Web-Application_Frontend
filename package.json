@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sweetalert2/theme-bulma": "^5.0.14",
     "@sweetalert2/theme-dark": "^5.0.12",
     "blockly": "^9.0.1",
     "prismjs": "^1.29.0",

@@ -8,7 +8,7 @@
 .blocklyTreeLabel {
     color: white;
     text-align: center;
-    padding: auto;
+    
 }
 
   /* Adds padding around the group of categories and separators. */
@@ -21,4 +21,8 @@
     padding: 4px;
     margin: 0.175rem;
     border-radius: 5px;
+}
+.blocklyTreeRowContentContainer {
+  display: flex;
+  align-items: center;
 }

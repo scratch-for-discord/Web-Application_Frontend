@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 // Blockly & Packages Imports
-import Blockly from 'blockly/core';
-import { ref } from "vue";
+import Blockly, { Block } from 'blockly/core';
+import { onMounted, ref } from "vue";
 import BlocklyComponent from "./components/BlocklyComponent.vue";
 import { toolboxString } from './toolbox'
 import { javascriptGenerator } from "blockly/javascript";
@@ -37,7 +37,7 @@ const DarkTheme = Blockly.Theme.defineTheme('a', {
 
 
 const foo = ref();
-const code = ref();
+// const code = ref();
 const options = {
   theme: DarkTheme,
   renderer: "zelos",
@@ -71,8 +71,13 @@ const options = {
     wheel: true
   }
 };
+// Loading Code On workspace
+let codeToLoad;
 
-const showCode = () => (code.value = javascriptGenerator.workspaceToCode(foo.value.workspace));
+
+// const showCode = () => (code.value = javascriptGenerator.workspaceToCode(foo.value.workspace));
+
+
 
 </script>
 

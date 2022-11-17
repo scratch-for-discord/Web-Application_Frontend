@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="#" @click="showCode()"
                             class="flex items-center p-1.5 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                             <svg aria-hidden="true"
                                 class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -128,9 +128,58 @@
         </aside>
     </div>
 </template>
+
 <script setup lang="ts">
+import Blockly from "blockly/core";
+import { javascriptGenerator } from "blockly/javascript";
+import Swal from "sweetalert2";
+import 'prismjs/themes/prism-tomorrow.css'
+import Prism from 'prismjs'
+function showCode() {
+
+
+    const code: string = `
+(async () => {
+    const Discord = require("discord.js")
+    const devMode = typeof __E_IS_DEV !== "undefined" && __E_IS_DEV
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+    const s4d = {
+        Discord,
+        database: new Database(\`\${devMode ? S4D_NATIVE_GET_PATH : "."}/db.json\`),
+        joiningMember: null,
+        reply: null,
+        tokenInvalid: false,
+        tokenError: null,
+        checkMessageExists() {
+            if (!s4d.client) throw new Error('You cannot perform message operations without a Discord.js client')
+            if (!s4d.client.readyTimestamp) throw new Error('You cannot perform message operations while the bot is not connected to the Discord API')
+            }
+        }
+        s4d.client = new s4d.Discord.Client({
+        intents: [Object.values(s4d.Discord.Intents.FLAGS).reduce((acc, p) => acc | p, 0)],
+            partials: ["REACTION"]
+            })
+            ${javascriptGenerator.workspaceToCode(Blockly.getMainWorkspace())}
+    return s4d
+    })()`
+
+    Swal.fire({
+        title: '<strong class=\"text-white\">JavaScript Code</strong>',
+        html: `<pre data-example-id="customHtml" data-codepen-css-external="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" class="code" style="text-align: start; word-wrap: break-word; overflow: auto">
+            <code style="word-wrap: break-word;">
+                ${Prism.highlight(code, Prism.languages.javascript, 'javascript')}
+            </code>
+        </pre>`,
+        width: `70%`,
+        background: '#121212',
+        color: '#fff',
+        padding: `0%`,
+        confirmButtonText: `Copy to clipboard`
+    })
+}
 
 </script>
+
 <style scoped>
 aside {
     position: absolute;
