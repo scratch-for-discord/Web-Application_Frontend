@@ -1,5 +1,5 @@
 <template>
-    <div class="topnav">
+    <div class="absolute top-0 left-0 w-1/1 h-51/1000 overflow-hidden bg-gray-900">
 
         <div class="logoBanner">
             <img src="../assets/vue.svg" />
@@ -72,12 +72,12 @@ function sayCode() {
 /* This style is scoped, first we styling the entire navBar */
 .topnav {
     font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 5.1%;
-    overflow: hidden;
+    left: 0; */
+    /* width: 100%; */
+    /* height: 5.1%; */
+    /* overflow: hidden; */
     background-color: #121212;
     user-select: none
 }

@@ -21,8 +21,11 @@
     "@rushstack/eslint-patch": "^1.2.0",
     "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^3.1.0",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.26.0",
     "eslint-plugin-vue": "^9.6.0",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4",
     "typescript": "^4.6.4",
     "vite": "^3.1.0",
     "vue-tsc": "^0.40.4"

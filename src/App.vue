@@ -9,6 +9,7 @@ import { javascriptGenerator } from "blockly/javascript";
 
 // Components
 import NavBar from './components/NavBar.vue'
+import SideNavBar from './components/SideNavBar.vue';
 
 
 // Blocks imports
@@ -20,7 +21,7 @@ const DarkTheme = Blockly.Theme.defineTheme('a', {
   'base': Blockly.Themes.Classic,
   'componentStyles': {
     'workspaceBackgroundColour': '#030303',
-    'toolboxBackgroundColour': '#121212',
+    'toolboxBackgroundColour': '#111827',
     'toolboxForegroundColour': '#fff',
     'flyoutBackgroundColour': '#121212',
     'flyoutForegroundColour': '#ccc',
@@ -78,7 +79,8 @@ const showCode = () => (code.value = javascriptGenerator.workspaceToCode(foo.val
 <template>
 
   <div id="app">
-    <NavBar />
+    <!-- <NavBar /> -->
+    <SideNavBar />
     <BlocklyComponent id="blockly" :options="options" ref="foo"></BlocklyComponent>
     <!-- <p id="code">
       <button v-on:click="showCode()">Show JavaScript</button>
@@ -100,9 +102,10 @@ const showCode = () => (code.value = javascriptGenerator.workspaceToCode(foo.val
 
 #blockly {
   position: absolute;
-  left: 0;
+  left: 55px;
   bottom: 0;
-  width: 100%;
-  height: 94.908%;
+  width: 97.2%;
+  /* height: 94.908%; */
+  height: 100%;
 }
 </style>
