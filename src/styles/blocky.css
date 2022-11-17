@@ -1,13 +1,14 @@
  /* Toolbox Styling */
 .sepDark {
-    border-bottom: solid #3f3f3f 1px;
-    height: 0;
+    border-bottom: solid #293448 1px;
+    height: 1px;
     margin: 5px 0;
 }
 
 .blocklyTreeLabel {
     color: white;
     text-align: center;
+    padding: auto;
 }
 
   /* Adds padding around the group of categories and separators. */

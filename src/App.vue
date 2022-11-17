@@ -20,12 +20,12 @@ const DarkTheme = Blockly.Theme.defineTheme('a', {
   'name': 'true_dark',
   'base': Blockly.Themes.Classic,
   'componentStyles': {
-    'workspaceBackgroundColour': '#030303',
+    'workspaceBackgroundColour': '#0c111a',
     'toolboxBackgroundColour': '#111827',
     'toolboxForegroundColour': '#fff',
-    'flyoutBackgroundColour': '#121212',
+    'flyoutBackgroundColour': '#111827',
     'flyoutForegroundColour': '#ccc',
-    'flyoutOpacity': 0.5,
+    'flyoutOpacity': 0.6,
     'scrollbarColour': '#797979',
     'insertionMarkerColour': '#fff',
     'insertionMarkerOpacity': 1,
@@ -104,7 +104,7 @@ const showCode = () => (code.value = javascriptGenerator.workspaceToCode(foo.val
   position: absolute;
   left: 55px;
   bottom: 0;
-  width: 97.2%;
+  width: 97.1%;
   /* height: 94.908%; */
   height: 100%;
 }
