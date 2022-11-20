@@ -59,7 +59,7 @@ blockly.JavaScript[blockName] = function(block) {
     const code = `await openai.createImage({
         prompt: ${prompt},
         n: 1,
-        size: "${size}",
+        size: ${size},
         response_format: "b64_json"
       }).then((response) => {
         const imageb64 = response.data.data[0].b64_json;
