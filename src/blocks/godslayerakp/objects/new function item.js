@@ -22,7 +22,7 @@ Blockly.Blocks[blockName + '_mutator_block_input'] = {
         this.appendDummyInput('text')
             .appendField("input")
             .appendField(new Blockly.FieldTextInput("", function(state) {
-                return state.replaceAll(/[^A-z]/g, '_')
+                return state.replaceAll(/[^A-Za-z]/g, '_')
             }), "name")
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
