@@ -240,7 +240,7 @@ Blockly.Blocks['set_bot_game_stream'] = {
         this.appendDummyInput()
             .appendField(new Blockly.FieldDropdown(options, this.validate), 'TYPE');
     }, updateConnections: function (newValue: any) {
-        this.removeInput('URL', /* no error */ true);
+        this.removeInput('URL', true);
         if (newValue == 'STREAMING') {
             this.appendValueInput('URL')
                 .appendField(new Blockly.FieldLabelSerializable("with URL"), "url_text")

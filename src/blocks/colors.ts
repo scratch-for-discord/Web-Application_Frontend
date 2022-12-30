@@ -1,22 +1,26 @@
 import * as Blockly from 'blockly';
 import { javascriptGenerator } from 'blockly/javascript'
-import {ColorWheelField} from 'blockly-field-color-wheel';
-
+//import {ColorWheelField} from 'blockly-field-color-wheel';
+import 'blockly-field-color-wheel';
 
 // Color picker
-const block = {
-  "output": "Colour"
-}
-
-Blockly.Blocks["color_wheel_picker"] = {
-  init: function () {
-    this.jsonInit(block);
-    this.appendDummyInput()
-      .appendField(new ColorWheelField("#00FF00", 150, {
-      layoutDirection: 'horizontal',
-      }), "COLOR")
-  }
-};
+Blockly.defineBlocksWithJsonArray([
+    {
+        "type": "color_wheel_picker",
+        "message0": "%1",
+        "output": "Colour",
+        "args0": [
+            {
+                "type": "color_wheel",
+                "name": "COLOR",
+                "color": "#00FF00",
+                "width" : 150,
+                "options":{
+                    layoutDirection: 'horizontal',
+                }
+            }
+        ]
+    }]);
 
 javascriptGenerator['color_wheel_picker'] = function (block: any) {
     const color = block.getFieldValue("COLOR");
