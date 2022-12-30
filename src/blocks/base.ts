@@ -215,7 +215,8 @@ Blockly.Blocks['set_bot_game_stream'] = {
 
     init: function () {
         this.jsonInit(s4d_set_bot_game_stream_data)
-        let options = [
+        this.appendDummyInput()
+            .appendField(new Blockly.FieldDropdown([
             [
                 "Listening",
                 "LISTENING"
@@ -236,11 +237,9 @@ Blockly.Blocks['set_bot_game_stream'] = {
                 "Streaming",
                 "STREAMING"
             ]
-        ]
-        this.appendDummyInput()
-            .appendField(new Blockly.FieldDropdown(options, this.validate), 'TYPE');
+        ], this.validate), 'TYPE');
     }, updateConnections: function (newValue: any) {
-        this.removeInput('URL', true);
+        this.removeInput('URL', /* no error */ true);
         if (newValue == 'STREAMING') {
             this.appendValueInput('URL')
                 .appendField(new Blockly.FieldLabelSerializable("with URL"), "url_text")
