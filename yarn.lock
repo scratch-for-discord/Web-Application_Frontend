@@ -1644,10 +1644,10 @@
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
 
-"sweetalert2@^11.6.4":
-  "integrity" "sha512-T2FO8LptErsjE4r0WMfiSk4YbeUvPadNaUZ/cADMEOnws000znrf8zFX9S5e/spvzJDyRI5En73WQyDZhGypxQ=="
-  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.6.16.tgz"
-  "version" "11.6.16"
+"sweetalert2@^11.4.8":
+  "integrity" "sha512-BDS/+E8RwaekGSxCPUbPnsRAyQ439gtXkTF/s98vY2l9DaVEOMjGj1FaQSorfGREKsbbxGSP7UXboibL5vgTMA=="
+  "resolved" "https://registry.npmjs.org/sweetalert2/-/sweetalert2-11.4.8.tgz"
+  "version" "11.4.8"
 
 "symbol-tree@^3.2.4":
   "integrity" "sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw=="
