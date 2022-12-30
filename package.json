@@ -12,8 +12,9 @@
     "@sweetalert2/theme-bulma": "^5.0.14",
     "@sweetalert2/theme-dark": "^5.0.12",
     "blockly": "^9.0.1",
+    "blockly-field-color-wheel": "^1.0.2",
     "prismjs": "^1.29.0",
-    "sweetalert2": "^11.6.4",
+    "sweetalert2": "^11.4.8",
     "url": "^0.11.0",
     "vite-plugin-static-copy": "^0.11.0",
     "vue": "^3.2.37"
