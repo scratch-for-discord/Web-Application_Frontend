@@ -285,7 +285,6 @@ let toolboxString = `
     <block type='on_bot_code_start'/>
     <block type='bot_amount_info'/>
     <block type="bot_shutdown_stop"/>
-    <block type="set_bot_game_stream"/>
     <block type="env"/>
 </category>
 

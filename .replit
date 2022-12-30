@@ -1,6 +1,6 @@
 
 hidden = [".config"]
-run = "vite --host"
+run = "vite preview --host"
 
 [[hints]]
 regex = "Error \\[ERR_REQUIRE_ESM\\]"
