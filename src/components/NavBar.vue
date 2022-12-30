@@ -2,7 +2,7 @@
     <div class="absolute top-0 left-0 w-1/1 h-51/1000 overflow-hidden bg-gray-900">
 
         <div class="logoBanner">
-            <img src="../assets/vue.svg" />
+            <img src="../assets/logo.png" />
             <h2>Scratch for Discord</h2>
         </div>
 

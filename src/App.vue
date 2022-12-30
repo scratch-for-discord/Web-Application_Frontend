@@ -14,8 +14,11 @@ import LoadingWindow from './components/LoadingWindow.vue';
 
 
 // Blocks imports
-import './blocks/base'
-
+import './blocks/base';
+import './blocks/list';
+import './blocks/loops';
+import './blocks/colors';
+  
 const DarkTheme = Blockly.Theme.defineTheme('a', {
   'name': 'true_dark',
   'base': Blockly.Themes.Classic,
