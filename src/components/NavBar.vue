@@ -121,7 +121,6 @@ function launchGitUi() {
             })
             }
 
-
 </script>
 
 <style scoped>
