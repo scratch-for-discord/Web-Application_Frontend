@@ -119,9 +119,6 @@ function launchGitUi() {
                         }
                     }
             })
-
-
-            
             }
 
 
