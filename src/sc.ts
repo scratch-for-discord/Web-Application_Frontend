@@ -2,6 +2,10 @@ import fetch from 'cross-fetch';
 var url = window.location.search
 const urlParams = new URLSearchParams(url);
 const code = urlParams.get('code')
+import Blockly from 'blockly/core';
+import base64 from 'base-64';
+
+
 
 if (code) {
     var changeUrl: any = new URL(document.location.href);
@@ -26,6 +30,16 @@ fetch('https://s4d-api.xl83.dev/api/v1/user/githubsc/', {
             localStorage.setItem("accessToken", res.code)
             localStorage.setItem("isTokenValid", "true")
             updateGitUi("show")
+            fetch('https://api.github.com/user', {
+                headers: {
+                  Authorization: `token ${localStorage.getItem("accessToken")}`
+                }
+              })
+                .then(res => res.json())
+                .then(json => {
+                    console.log(json)
+                    localStorage.setItem("userData", JSON.stringify(json))
+                })
         } else {
             alert("There was a error, please refresh and try login again")
         }
@@ -61,4 +75,25 @@ function updateGitUi(type: string) {
     }
 }
 
-export {}
+function push() {
+
+}
+
+function pull() {
+    var userDataString: any = localStorage.getItem("userData")
+    console.log(userDataString)
+    var userData = JSON.parse(userDataString)
+    fetch(`https://api.github.com/repos/${userData.login}/${localStorage.getItem("repo")}/contents/blocks.xml`, {
+                headers: {
+                  Authorization: `token ${localStorage.getItem("accessToken")}`
+                }
+            }).then(res => res.json())
+                .then(json => {
+               var xml = base64.decode(json.content)
+               let xmlDom = Blockly.Xml.textToDom(xml);
+               Blockly.Xml.domToWorkspace(xmlDom, Blockly.getMainWorkspace());
+            })
+}
+
+
+export { push, pull }

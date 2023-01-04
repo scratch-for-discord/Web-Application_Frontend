@@ -24,6 +24,7 @@ import { javascriptGenerator } from "blockly/javascript";
 import Swal from "sweetalert2";
 import 'prismjs/themes/prism-tomorrow.css'
 import Prism from 'prismjs'
+import { pull, push } from '../sc'
 
 function sayCode() {
 
@@ -73,9 +74,9 @@ function launchGitUi() {
                   input: 'select',
                                 inputOptions: {
                                     't1': 'Repository Selection',
-                                    't3': 'Pull',
-                                    't4': 'Push',
-                                    't5': 'Logout',
+                                    't2': 'Pull',
+                                    't3': 'Push',
+                                    't4': 'Logout',
                                 },
                                 inputPlaceholder: 'Select a Option',
                                 showCancelButton: true,
@@ -91,10 +92,10 @@ function launchGitUi() {
             .then(res => res.json())
             .then(json => {
                 console.log(json)
-                json.forEach(element => {
-                var name = element.name
+                json.forEach((ele: any) => {
+                var name = ele.name
                 console.log(name)
-                var newObj = {[name]: element.name}
+                var newObj = {[name]: ele.name}
                 Object.assign(selectRepo, newObj)
                 });
                 Swal.fire({
@@ -109,7 +110,13 @@ function launchGitUi() {
                 title: `Succesfully Selected ${result.value}!`,
             })
             })
-                })
+                }) 
+                    } else if (result.value == "t2") {
+                        if (!localStorage.getItem("repo")) {
+                            alert("Please select a repo first")
+                        } else {
+                            pull()
+                        }
                     }
             })
 

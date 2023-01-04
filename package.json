@@ -10,7 +10,10 @@
   },
   "dependencies": {
     "@sweetalert2/theme-dark": "^5.0.12",
+    "base-64": "^1.0.0",
     "blockly": "^9.0.1",
+    "buffer": "^6.0.3",
+    "Buffer": "^0.0.0",
     "cross-fetch": "^3.1.5",
     "prismjs": "^1.29.0",
     "sweetalert2": "^11.6.4",
@@ -20,6 +23,8 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/base-64": "^1.0.0",
+    "@types/node": "^18.11.18",
     "@types/prismjs": "^1.26.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "eslint": "^8.26.0",
