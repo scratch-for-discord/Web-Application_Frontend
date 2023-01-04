@@ -5,8 +5,6 @@ const code = urlParams.get('code')
 import Blockly from 'blockly/core';
 import base64 from 'base-64';
 
-
-
 if (code) {
     var changeUrl: any = new URL(document.location.href);
     changeUrl.searchParams.delete('code');
