@@ -1,5 +1,5 @@
-let toolboxString = {
-    "kind": "flyoutToolbox",
+export default {
+    "kind": "categoryToolbox",
     "contents": [
         {
             "kind": "category",
@@ -95,12 +95,8 @@ let toolboxString = {
             ]
         },
         {
-            "kind": "category",
-            "name": "Variables",
-            "colour": "%{BKY_VARIABLES_HUE}"
-        },
-        {
-            "kind": "sep"
+            "kind": "sep",
+            "gap": 32
         },
         {
             "kind": "category",
@@ -131,5 +127,3 @@ let toolboxString = {
         }
     ]
 }
-
-export { toolboxString }
