@@ -4,7 +4,7 @@
 import Blockly from 'blockly/core';
 import { ref } from "vue";
 import BlocklyComponent from "./components/BlocklyComponent.vue";
-import { toolboxString } from './toolbox'
+import toolbox from './toolbox'
 import { javascriptGenerator } from "blockly/javascript";
 
 // Components
@@ -60,7 +60,7 @@ const options = {
     minScale: 0.1,
     scaleSpeed: 1.2
   },
-  toolbox: toolboxString,
+  toolbox: toolbox,
   move: {
     scrollbars: {
       horizontal: true,
