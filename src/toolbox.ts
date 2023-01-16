@@ -1,4 +1,3 @@
-// done in a seconds with https://replit.com/@RedMan13/blockly-xml-to-json-toolbox 
 let toolboxString = {
     "kind": "flyoutToolbox",
     "contents": [
