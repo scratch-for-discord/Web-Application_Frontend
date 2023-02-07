@@ -71,7 +71,7 @@ const examples = {
 };
 
 function displaySwalPopupForUserExample(json, lkjgenwhikgu4ewkjn, selectedOption, SERVER, swal, workspace, toast) {
-    lkjgenwhikgu4ewkjn.innerHTML = `<h2><i class="fa-solid fa-file-pen"></i> &#8226 <b>${json.example[0].replaceAll("<", "").replaceAll("/", "").replaceAll("\\", "")}</b>${json.example[5] == null || json.example[5] == "" ? "" : ` &#8226 <i class="fa-solid fa-star"></i>`}</h2>
+    lkjgenwhikgu4ewkjn.innerHTML = `<h2><i class="fa-solid fa-file-pen"></i> &#8226 <b>${json.example[0].replaceAll("<", "").replaceAll("/", "").replaceAll("\\", "")}</b>${json.example[5] == null || json.example[5] == "" ? "" : ` &#8226 <i class="fa-solid fa-star" title="This example is created by a trusted/verified creator"></i>`}</h2>
 <i class="fa-solid fa-user-shield"></i> <b>${json.example[6].replaceAll("\\", "").replaceAll("<", "").replaceAll(">", "").replaceAll("/", "")}</b>
 &#8226
 <i class="fa-solid fa-cube"></i> <b><em>${Number(json.example[3])}</em></b>
@@ -393,9 +393,10 @@ ${blockCounts <= 5 ? `<p style="color: darkred; font-weight: bold;">Uploading ne
                                 })
                                 /* eslint-disable */
                                 let voteButtonSessionList = {}
+                                let i = 0
                                 names.forEach((name) => {
                                     voteButtonSessionList[String(name[2])] = {likes: name[8], dislikes: name[9]}
-                                    boxes += `<label name="pickThisExampleToImportButton" style="width: 48%;">
+                                    boxes = `<label storder="${String(i)}" stloads="${String(name[7])}" stdislikes="${String(name[6])}" stlikes="${String(name[5])}" stblocks="${String(name[1])}" name="pickThisExampleToImportButton" style="width: 48%;">
     <div class="box">
         <input type="radio" id="${name[2]}" name="pickThisExampleToImportButton" class="sr-only-basic">
             <center>
@@ -419,14 +420,14 @@ ${blockCounts <= 5 ? `<p style="color: darkred; font-weight: bold;">Uploading ne
             <span><i class="fa fa-cube"></i> ${String(name[1])} blocks</span><span style="color:transparent">&#8226</span>
         </div>
     </div>
-</label>
-<br>`
+</label>` + boxes;
+i++
                                 })
                                 /* eslint-disable */
                                 responseHTML.innerHTML = `<!-- buttons to search & stuff -->
 <div style="margin-bottom: 0.5em;">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" size="75" id="swal_dialog_box_searchForUserExamples" placeholder="Search for an Example">
+    <input type="text" size="60" id="swal_dialog_box_searchForUserExamples" placeholder="Search for an Example">
     <button type="button" id="swal_menu_CaseSensitiveUserExampleSearch" title="Case Sensitive Searching" style="background-color: Transparent;border: none;">
         <i class="fa-solid fa-font"></i>
     </button>
@@ -436,6 +437,17 @@ ${blockCounts <= 5 ? `<p style="color: darkred; font-weight: bold;">Uploading ne
     <button type="button" id="swal_menu_ChangeBoxSizeUserExamples" title="Change the amount of examples on screen" style="background-color: Transparent;border: none;">
         <i class="fa-solid fa-table-cells-large"></i>
     </button>
+    <i title="Sort the examples menu" class="fa-solid fa-arrow-down-wide-short"> </i>
+    <select id="swal_dialog_box_sortUserExamples">
+        <option value="new">Newest First</option>
+        <option value="old">Oldest First</option>
+        <option value="liked">Most Liked</option>
+        <option value="hated">Most Hated</option>
+        <option value="mostImports">Most Imported</option>
+        <option value="leastImports">Least Imported</option>
+        <option value="mostBlocks">Many Blocks</option>
+        <option value="leastBlocks">Not many Blocks</option>
+    </select>
 </div>
 <div id="swal_menu_SearchFilterOptionsInUserExamples" style="display: none">
     <br>
@@ -471,17 +483,6 @@ ${blockCounts <= 5 ? `<p style="color: darkred; font-weight: bold;">Uploading ne
     <br>
     <br>
 </div>
-<!--<div style="float: right;">
-    <i title="Sort the examples menu" class="fa-solid fa-arrow-down-wide-short">: </i>
-    <select id="swal_dialog_box_sortUserExamples">
-        <option value="new">Newest First</option>
-        <option value="old">Oldest First</option>
-        <option value="liked">Most Liked</option>
-        <option value="hated">Most Hated</option>
-        <option value="mostImports">Most Imported</option>
-        <option value="leastImports">Least Imported</option>
-    </select>
-</div>-->
 <!-- examples area -->
 <center>
     <form id="swal_user_examples_dialog_box-form_area" style="width: 100%; display: flex; flex-wrap: wrap; justify-content: center;">
@@ -592,6 +593,8 @@ fetch("${SERVER + 'api/examples/updateVotes'}", requestOptions)
                                 //     console.log()
                                 // }
                                 let searchBox = document.getElementById("swal_dialog_box_searchForUserExamples")
+                                let sortingType = document.getElementById("swal_dialog_box_sortUserExamples")
+                                let sortingBy = "new"
                                 let caseSensitive = false
                                 let caseSensitiveButton = document.getElementById("swal_menu_CaseSensitiveUserExampleSearch")
                                 caseSensitiveButton.onclick = function () {
@@ -600,6 +603,11 @@ fetch("${SERVER + 'api/examples/updateVotes'}", requestOptions)
                                         caseSensitiveButton.setAttribute("style", "background-color: Transparent;border: none;color:#00aaff")
                                     :
                                         caseSensitiveButton.setAttribute("style", "background-color: Transparent;border: none;")
+                                    searchBox.oninput()
+                                }
+                                sortingType.onchange = (e) => {
+                                    sortingBy = e.target.value
+                                    console.log(sortingBy)
                                     searchBox.oninput()
                                 }
                                 let gridSize3 = false
@@ -623,6 +631,7 @@ fetch("${SERVER + 'api/examples/updateVotes'}", requestOptions)
                                 }
                                 let unsearchedHtml = document.getElementById("swal_user_examples_dialog_box-form_area").innerHTML
                                 searchBox.oninput = function () {
+                                    console.log("search changed")
                                     let area = document.getElementById("swal_user_examples_dialog_box-form_area")
                                     area.innerHTML = unsearchedHtml
                                     if (gridSize3) {
@@ -631,6 +640,7 @@ fetch("${SERVER + 'api/examples/updateVotes'}", requestOptions)
                                     }
                                     let boxes = area.getElementsByTagName("label")
                                     let kept = boxes.length
+                                    let readyForSorting = []
                                     for (let i = 0; i < boxes.length; i++) {
                                         let current = boxes.item(i)
                                         let name = current.getElementsByClassName("box").item(0)
@@ -647,15 +657,140 @@ fetch("${SERVER + 'api/examples/updateVotes'}", requestOptions)
                                             current.setAttribute("style", "display: none")
                                             kept--
                                         }
+                                        readyForSorting.push(current)
                                     }
+                                    console.log(kept)
                                     if (kept <= 0) {
-                                        area.innerHTML = `<div style="display: grid">
+                                        area.innerHTML = `<div style="display: grid; align-content: center;">
     <br>
     <br>
     <em style="color:gray">No examples were found.</em>
     <br>
-    <i class="fa-solid fa-circle-question fa-2xl"></i>
+    <i style="color:gray" class="fa-solid fa-circle-question fa-2xl"></i>
 </div>`
+                                    }
+                                    // sorting
+                                    if (kept > 0) {
+                                        console.log("sorting for", sortingBy)
+                                        const parent = area
+                                        switch (sortingBy) {
+                                            case 'new': 
+                                                console.log("a")
+                                                for (let i = 0; i < boxes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        if (String(box.getAttribute("storder")) == String(i)) {
+                                                            parent.prepend(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                            case 'old': 
+                                                console.log("b")
+                                                for (let i = 0; i < boxes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        if (String(box.getAttribute("storder")) == String(i)) {
+                                                            parent.append(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                            case 'liked':
+                                                console.log("c")
+                                                var likes = []
+                                                readyForSorting.forEach(box => {
+                                                    likes.push(Number(box.getAttribute("stlikes")) - Number(box.getAttribute("stdislikes")))
+                                                })
+                                                likes.sort((a, b) => { return b - a })
+                                                for (let i = 0; i < likes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        let like = Number(box.getAttribute("stlikes")) - Number(box.getAttribute("stdislikes"))
+                                                        if (like == Number(likes[i])) {
+                                                            parent.append(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                            case 'hated':
+                                                console.log("d")
+                                                var likes = []
+                                                readyForSorting.forEach(box => {
+                                                    likes.push(Number(box.getAttribute("stlikes")) - Number(box.getAttribute("stdislikes")))
+                                                })
+                                                likes.sort((a, b) => { return b - a })
+                                                for (let i = 0; i < likes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        let like = Number(box.getAttribute("stlikes")) - Number(box.getAttribute("stdislikes"))
+                                                        if (like == Number(likes[i])) {
+                                                            parent.prepend(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                            case 'mostImports':
+                                                console.log("e")
+                                                var likes = []
+                                                readyForSorting.forEach(box => {
+                                                    likes.push(Number(box.getAttribute("stloads")))
+                                                })
+                                                likes.sort((a, b) => { return b - a })
+                                                for (let i = 0; i < likes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        let like = Number(box.getAttribute("stloads"))
+                                                        if (like == Number(likes[i])) {
+                                                            parent.append(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                            case 'leastImports':
+                                                console.log("f")
+                                                var likes = []
+                                                readyForSorting.forEach(box => {
+                                                    likes.push(Number(box.getAttribute("stloads")))
+                                                })
+                                                likes.sort((a, b) => { return b - a })
+                                                for (let i = 0; i < likes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        let like = Number(box.getAttribute("stloads"))
+                                                        if (like == Number(likes[i])) {
+                                                            parent.prepend(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                            case 'mostBlocks':
+                                                console.log("g")
+                                                var likes = []
+                                                readyForSorting.forEach(box => {
+                                                    likes.push(Number(box.getAttribute("stblocks")))
+                                                })
+                                                likes.sort((a, b) => { return b - a })
+                                                for (let i = 0; i < likes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        let like = Number(box.getAttribute("stblocks"))
+                                                        if (like == Number(likes[i])) {
+                                                            parent.append(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                            case 'leastBlocks':
+                                                console.log("h")
+                                                var likes = []
+                                                readyForSorting.forEach(box => {
+                                                    likes.push(Number(box.getAttribute("stblocks")))
+                                                })
+                                                likes.sort((a, b) => { return b - a })
+                                                for (let i = 0; i < likes.length; i++) {
+                                                    readyForSorting.forEach(box => {
+                                                        let like = Number(box.getAttribute("stblocks"))
+                                                        if (like == Number(likes[i])) {
+                                                            parent.prepend(box)
+                                                        }
+                                                    })
+                                                }
+                                                break;
+                                        }
                                     }
                                 }
                             })
