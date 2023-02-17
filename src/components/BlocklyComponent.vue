@@ -2198,7 +2198,7 @@ Author: <input type="text" id="EmbedAuthor"> PFP: <input type="text" id="EmbedAu
               this.toastRegister = true;
               this.$toast.open({
                 message:
-                  'You may only use one "Register Slash Commands" block.',
+                  'You may only use one "Create Slash Commands" block.',
                 type: "error",
                 dismissible: false,
                 duration: 1000000000,
