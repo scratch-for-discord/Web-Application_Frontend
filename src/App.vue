@@ -10,7 +10,6 @@ import './sc'
 // Components
 import NavBar from './components/NavBar.vue'
 
-
 // Blocks imports
 import './blocks/base'
 

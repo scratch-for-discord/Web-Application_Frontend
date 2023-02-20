@@ -4,8 +4,11 @@ const urlParams = new URLSearchParams(url);
 const code = urlParams.get('code')
 import Blockly from 'blockly/core';
 import base64 from 'base-64';
+<<<<<<< HEAD
 import Swal from "sweetalert2";
 
+=======
+>>>>>>> 111ebc7dbe0da111735b8fd8716b6d0feb0c00e9
 
 if (code) {
     var changeUrl: any = new URL(document.location.href);
@@ -144,6 +147,5 @@ function pull() {
                Blockly.Xml.domToWorkspace(xmlDom, Blockly.getMainWorkspace());
             })
 }
-
 
 export { push, pull }

@@ -125,14 +125,8 @@ function launchGitUi() {
                         }
                     }
             })
-
-
-            
             }
-
-
 </script>
-
 
 <style scoped>
 /* This style is scoped, first we styling the entire navBar */
