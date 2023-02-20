@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(url);
 const code = urlParams.get('code')
 import Blockly from 'blockly/core';
 import base64 from 'base-64';
-
+import Swal from "sweetalert2";
 
 
 if (code) {
@@ -76,7 +76,57 @@ function updateGitUi(type: string) {
 }
 
 function push() {
+var userDataString: any = localStorage.getItem("userData")
+var userData = JSON.parse(userDataString)
+var xmlDom = Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace())
+var xml = Blockly.Xml.domToPrettyText(xmlDom)
 
+var encodedContent = base64.encode(xml)
+
+// Encode the file content as a base64 string
+
+
+// Get the SHA of the file
+fetch(`https://api.github.com/repos/${userData.login}/${localStorage.getItem("repo")}/contents/blocks.xml`, {
+    headers: {
+        Authorization: `token ${localStorage.getItem("accessToken")}`
+    }
+})
+  .then(response => response.json())
+  .then(fileData => {
+    const sha = fileData.sha;
+
+    // Send a PUT request to update the file
+    fetch(fileData.url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `token ${localStorage.getItem("accessToken")}`
+      },
+      body: JSON.stringify({
+        message: 'Updated file via S4D',
+        content: encodedContent,
+    sha: sha
+
+      })
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('File updated successfully.');
+      } else {
+        response.json().then(resJson => {
+            console.log(resJson)
+            console.log(resJson.message)
+            Swal.fire({
+                icon: 'error',
+                title: 'Error...',
+                text: resJson.message
+              })
+        })
+      }
+    })
+    .catch(error => console.log(error));
+  });
 }
 
 function pull() {

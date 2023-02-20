@@ -24,7 +24,7 @@ import { javascriptGenerator } from "blockly/javascript";
 import Swal from "sweetalert2";
 import 'prismjs/themes/prism-tomorrow.css'
 import Prism from 'prismjs'
-import { pull, push } from '../sc'
+import * as GitHandler from '../sc'
 
 function sayCode() {
 
@@ -115,7 +115,13 @@ function launchGitUi() {
                         if (!localStorage.getItem("repo")) {
                             alert("Please select a repo first")
                         } else {
-                            pull()
+                            GitHandler.pull()
+                        }
+                    } else if (result.value == "t3") {
+                        if (!localStorage.getItem("repo")) {
+                            alert("Please select a repo first")
+                        } else {
+                            GitHandler.push()
                         }
                     }
             })
