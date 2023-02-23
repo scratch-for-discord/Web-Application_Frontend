@@ -7,7 +7,7 @@ Blockly.Blocks["frost_await"] = {
       "args0": [
         {
           "type": "input_value",
-          "name": "block"
+          "name": "input_block"
         }
       ],
       "output": null,
@@ -20,7 +20,7 @@ Blockly.Blocks["frost_await"] = {
 };
 
 Blockly.JavaScript["frost_await"] = function (block) {
-  let block = Blockly.JavaScript.valueToCode(block, "block", Blockly.JavaScript.ORDER_ATOMIC)
-  let code = `await ${block}`
+  let input_block = Blockly.JavaScript.valueToCode(block, "input_block", Blockly.JavaScript.ORDER_ATOMIC)
+  let code = `await ${input_block}`
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 }
