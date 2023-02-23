@@ -1,6 +1,6 @@
 import Blockly from "blockly/core";
 
-const blockName = "blank_code";
+const blockName = "blank_code_output";
 
 const blockData = {
     "message0": "insert code⠀ %1 ⠀",
