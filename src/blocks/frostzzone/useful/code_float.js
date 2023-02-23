@@ -11,8 +11,6 @@ const blockData = {
       "spellcheck": false
     }],
     "colour": "#d14081",
-    "previousStatement": null,
-    "nextStatement": null,
     "tooltip": "Insert code to run without eval"
 };
 
