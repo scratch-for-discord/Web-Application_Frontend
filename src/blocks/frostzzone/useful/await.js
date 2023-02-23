@@ -1,3 +1,5 @@
+import Blockly from "blockly/core";
+
 Blockly.Blocks["frost_await"] = {
   init: function () {
     this.jsonInit({
