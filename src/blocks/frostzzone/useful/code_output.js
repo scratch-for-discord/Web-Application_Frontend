@@ -1,6 +1,6 @@
 import Blockly from "blockly/core";
 
-const blockName = "blank_code";
+const blockName = "blank_code_output";
 
 const blockData = {
     "message0": "insert code⠀ %1 ⠀",
@@ -11,8 +11,7 @@ const blockData = {
       "spellcheck": false
     }],
     "colour": "#d14081",
-    "previousStatement": null,
-    "nextStatement": null,
+    "output": null,
     "tooltip": "Insert code to run without eval"
 };
 
@@ -26,5 +25,5 @@ Blockly.JavaScript[blockName] = function(block) {
     var text = block.getFieldValue('TEXT');
   if ((text == null)||(text == undefined)) return ``
     var code = `${text}\n`;
-    return code;
+    return [code, Blockly.JavaScript.ORDER_NONE];
 };

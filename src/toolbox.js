@@ -616,6 +616,13 @@ export default (favorites) => {
             </value>
         </block>
         <label text="interacting with a buffer" web-class="boldtext"/>
+        <block type="gsa_string_from_buffer">
+            <value name="string">
+                <block type="variables_get" id="{b=P+v5fS/$g}b+*p|(Q">
+                    <field name="VAR" id="/Z^RT(;uS$ADtFZ[?W]-">buffer</field>
+                </block>
+            </value>
+        </block>
         <block type="gsa_buffer_index_of_string_number_or_buffer">
             <value name="buffer">
                 <block type="variables_get" id="{b=P+v5fS/$g}b+*p|(Q">
@@ -779,6 +786,12 @@ export default (favorites) => {
             <mutation xmlns="http://www.w3.org/1999/xhtml" inputs="null" return="false"/>
         </block>
         <block type="blank_code">
+            <field name="TEXT"/>
+        </block>
+        <block type="blank_code_output">
+            <field name="TEXT"/>
+        </block>
+        <block type="blank_code_float">
             <field name="TEXT"/>
         </block>
         <block type="s4d_eval"/>
