@@ -22,10 +22,10 @@ Blockly.Blocks["inv_fsh_api_animal"] = {
 Blockly.JavaScript['inv_fshapi_animal'] = function(block) {
   var text_type = block.getFieldValue('type');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'var code = `await async(){
+  var code = `await async(){
 let veryLongVarSoN0Conflicts;
 https.get(('https://fsh-bot.frostzzone.repl.co/api/animal?animal=' + String(text_type)), async resp => {\nlet data2 = "";\nresp.on("data", async chunk => {data2 += chunk});\nresp.on("end", async () => {\nlet data = JSON.parse(data2)\nveryLongVarSoN0Conflicts = data.image;\n});\n})
 return veryLongVarSoN0Conflicts;
-}` ';
+}`;
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
