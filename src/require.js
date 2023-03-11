@@ -204,7 +204,7 @@ export default async function require(array, code, js) {
     if (js.includes("xml2json({")) {
         array.push(`const xml2json = require('xml-to-json')`)
     }
-    if (js.includes("S4D_APP_PKG_axios")||js.includes("_S4D_inventionFSHapiAnimal")||js.includes("_S4D_inventionFSHapiCraiyon")) {
+    if (js.includes("S4D_APP_PKG_axios")||js.includes("_S4D_inventionFSHapiAnimal")||js.includes("_S4D_inventionFSHapiCraiyon")||js.includes("_S4D_inventionFSHapiHtml")) {
         array.push(`const S4D_APP_PKG_axios = require('axios')`)
     }
     if (js.includes("S4D_APP_MC_GET")) {
@@ -278,7 +278,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
     if (js.includes("OpenAIApi")) {
         array.push('const { Configuration, OpenAIApi } = require("openai");')
     }
-    if(js.includes("_S4D_inventionFSHapiAnimal")) {
+    if (js.includes("_S4D_inventionFSHapiAnimal")) {
         code.push(`async function _S4D_inventionFSHapiAnimal(_S4D_image_anfsh) {
             let _S4D_inventionFSHapiAnimal;
             try {
@@ -293,7 +293,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
             return _S4D_inventionFSHapiAnimal;
         }`)
     }
-    if(js.includes("_S4D_inventionFSHapiCraiyon")) {
+    /*if (js.includes("_S4D_inventionFSHapiCraiyon")) {
         code.push(`async function _S4D_inventionFSHapiCraiyon(_S4D_image_crfsh) {
             let _S4D_inventionFSHapiCraiyon;
             try {
@@ -306,6 +306,21 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
                 console.error('An error occured when fetching craiyon')
             }
             return _S4D_inventionFSHapiCraiyon;
+        }`)
+    }*/
+    if (js.includes("_S4D_inventionFSHapiHtml")) {
+        code.push(`async function _S4D_inventionFSHapiHtml(_S4D_image_htfsh) {
+            let _S4D_inventionFSHapiHtml;
+            try {
+                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/page?url=' + _S4D_image_htfsh)
+                _S4D_inventionFSHapiHtml = response.data.content;
+            } catch (error) {
+                //return empty string if error
+                _S4D_inventionFSHapiHtml = ""
+                //also log
+                console.error('An error occured when fetching html')
+            }
+            return _S4D_inventionFSHapiHtml;
         }`)
     }
 }
