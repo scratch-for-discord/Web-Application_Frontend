@@ -13,7 +13,7 @@ const blockData = {
   ],
   "inputsInline": true,
   "output": "String",
-  "colour": "#134b9e",
+  "colour": "#1a75ba",
   "tooltip": "Gets the html code of a website (e.g. https://google.com)",
   "helpUrl": ""
 };
