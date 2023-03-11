@@ -2799,9 +2799,13 @@ export default (favorites) => {
         </category>
         <category name="Fsh API" colour="#50494e">
             <label text="Fsh api"/>
+            <label text="Text api"/>
+            <block type="lars-inv_fsh_api_html"/>
+                <shadow type="text">
+                    <field name="TEXT">https://google.com</field>
+                </shadow>
             <label text="Image api"/>
             <block type="inv_fsh_api_animal"/>
-            
         </category>
     </category>
     <category name="Securing" colour="#4c61ff">
