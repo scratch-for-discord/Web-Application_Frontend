@@ -27,16 +27,7 @@ Blockly.JavaScript[blockName] = function(block) {
   var text_type = block.getFieldValue('TYPE');
   text_type = encodeURIComponent(text_type.toLowerCase());
 
-  var code = `await async()=>{
-    let inventionVeryLongVarSoThenAUserDoesntAcidentallyUseThisName;
-    try {
-      const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/animal?animal=${text_type}')
-      inventionVeryLongVarSoThenAUserDoesntAcidentallyUseThisName = response.data.image;
-    } catch (error) {
-      inventionVeryLongVarSoThenAUserDoesntAcidentallyUseThisName = "https://i.ibb.co/N1xhDTD/image.png"
-    }
-    return inventionVeryLongVarSoThenAUserDoesntAcidentallyUseThisName;
-  }`;
+  var code = `await inventionVeryLongFunctionSoThenAUserDoesntAcidentallyUseThisName('${text_type}')`;
 
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
