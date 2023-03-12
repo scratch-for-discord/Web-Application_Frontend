@@ -2801,9 +2801,9 @@ export default (favorites) => {
             <label text="Fsh api"/>
             <label text="Text api"/>
             <block type="lars-inv_fsh_api_html"/>
-                <value name="url">
+                <value name="text">
                     <shadow type="text">
-                        <field name="TEXT">https://google.com</field>
+                        <field name="url">https://google.com</field>
                     </shadow>
                 </value>
             <label text="Image api"/>
