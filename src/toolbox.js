@@ -2801,10 +2801,8 @@ export default (favorites) => {
             <label text="Fsh api"/>
             <label text="Text api"/>
             <block type="lars-inv_fsh_api_html"/>
-                <value name="text">
-                    <shadow type="text">
-                        <field name="url">https://google.com</field>
-                    </shadow>
+                <value name="url">
+                    <shadow type="text"/>
                 </value>
             <label text="Image api"/>
             <block type="inv_fsh_api_animal"/>
@@ -2815,7 +2813,9 @@ export default (favorites) => {
         <label text="Securing text" web-class="boldtext"/>
         <block type="catsoup_encryption_sha256">
             <value name="encode">
-                <shadow type="text"/>
+                <shadow type="text">
+                    <field name="TEXT">https://google.com</field>
+                </shadow>
             </value>
         </block>
         <block type="jg_encryption_encrypt_text">
