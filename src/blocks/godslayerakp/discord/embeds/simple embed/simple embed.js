@@ -1,49 +1,142 @@
-// the current state of my checkbox mutator
-// the goal is to have this checkbox mutator solve the following problems with existing checkbox mutators:
-
-// 1. dont kick out any inputs when the mutator menu is opened
-// 2. dont apply the same inputs as another mutator on the workspace
-// 3. dont have any save & loading issues that will cause problems with the users blocks
-
-// current goals achieved: 1, 2, 3(?)!!!!
-
-import Blockly from "blockly/core";
-import BaseBlockly from "blockly";
-const blockName = "gsa_simple_embed";
-const menuName = blockName + "_checkboxMutatorMenu"
-
-const BlockColor = '#40BF4A'
-// menu customization
-const menuUsesBlockColor = true
-const menuTooltip = ''
-
-// border fields is the name of the input when getting it for the exported code.
-// they HAVE to be uppercase currently or it won't work since im too lazy to change the uppercase function uses
-const BORDER_FIELDS = ['message', 'color', 'title', 'url', 'author', 'description', 'thumbnail', 'fields', 'image', 'timestamp', 'footer'];
-// border types is the input type of every input in the block
-const BORDER_TYPES = ['String', ['String', 'Colour'], 'String', 'String', 'gsa_set_simple_embed_author', 'String', 'String', 'gsa_create_simple_embed_fields', 'String', 'String', 'gsa_set_simple_embed_footer'];
-// names is the name of that input in the menu and in the final block
-const names = ['message', 'color', 'title', 'url', 'author:', 'description', 'thumbnail', 'fields:', 'image', 'timestamp', 'footer:'];
-const amountOfInputs = names.length
-
-for (let i = 0; i < BORDER_FIELDS.length; i++) { 
-    BORDER_FIELDS[i] = BORDER_FIELDS[i].toUpperCase()
+import Blockly from "blockly/core"; 
+const loadInputWithBlock = (input, block) => {
+    const connection = input.connection
+    if (input.connection.targetConnection) return
+    const inputBlock = input.sourceBlock_.workspace.newBlock(block)
+    inputBlock.initSvg()
+    inputBlock.render()
+    connection.connect(inputBlock.outputConnection)
 }
-
-const blockData = {
-    "message0": "simple embed %1",
-    "args0": [
-        {
-            "type": "input_dummy",
+const blockName = "gsa_simple_embed";
+const inputs = [
+    {
+        "name": "message",
+        "text": "message",
+        "type": "String",
+        "id": "message",
+        export: function(block) {
+            return `content: String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)}), `
         }
-    ],
-    "colour": BlockColor,
+    },
+    {
+        "name": "color",
+        "text": "color",
+        "type": [
+            "String",
+            "Colour"
+        ],
+        "id": "color",
+        export: function(block) {
+            return `color: String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)}), \n`
+        }
+    },
+    {
+        "name": "title",
+        "text": "title",
+        "type": "String",
+        "id": "title",
+        export: function(block) {
+            return `title: String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)}), \n`
+        }
+    },
+    {
+        "name": "url",
+        "text": "url",
+        "type": "String",
+        "id": "url",
+        export: function(block) {
+            return `url: String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)}), \n`
+        }
+    },
+    {
+        "name": "author:",
+        "text": "author:",
+        "type": "gsa_set_simple_embed_author",
+        "id": "author",
+        onUse: function() {
+            loadInputWithBlock(this.getInput('author'), 'gsa_set_simple_embed_author')
+        },
+        export: function(block) {
+            return Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_ATOMIC)
+        }
+    },
+    {
+        "name": "description",
+        "text": "description",
+        "type": "String",
+        "id": "description",
+        export: function(block) {
+            return `description: String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)}), \n`
+        }
+    },
+    {
+        "name": "thumbnail",
+        "text": "thumbnail",
+        "type": "String",
+        "id": "thumbnail",
+        export: function(block) {
+            return `thumbnail: {
+                url: String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)})
+            }, \n`
+        }
+    },
+    {
+        "name": "fields:",
+        "text": "fields:",
+        "type": "gsa_create_simple_embed_fields",
+        "id": "fields",
+        onUse: function() {
+            loadInputWithBlock(this.getInput('fields'), 'gsa_create_simple_embed_fields')
+        },
+        export: function(block) {
+            return Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_ATOMIC)
+        }
+    },
+    {
+        "name": "image",
+        "text": "image",
+        "type": "String",
+        "id": "image",
+        export: function(block) {
+            return `image: {
+                url: String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)})
+            }, \n`
+        }
+    },
+    {
+        "name": "timestamp",
+        "text": "timestamp",
+        "type": "String",
+        "id": "timestamp",
+        export: function(block) {
+            return `timestamp: new date(String(${Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_NONE)})),`
+        }
+    },
+    {
+        "name": "footer:",
+        "text": "footer:",
+        "type": "gsa_set_simple_embed_footer",
+        "id": "footer",
+        onUse: function() {
+            loadInputWithBlock(this.getInput('footer'), 'gsa_set_simple_embed_footer')
+        },
+        export: function(block) {
+            return Blockly.JavaScript.valueToCode(block, this.id, Blockly.JavaScript.ORDER_ATOMIC)
+        }
+    }
+]
+const findInputDataFor = (name) => inputs.find(input => input.id === name)
+const blockData = {
+    "message0": "simple embed",
+    "args0": [],
+    "colour": '#40BF4A',
     "output": 'MessageEmbed',
 };
+
+const menuName = `${blockName}_mutator_menu`
 Blockly.Blocks[menuName] = {
     init: function () {
-        this.setColour((menuUsesBlockColor ? BlockColor : "#CECDCE"));
-        this.setTooltip(menuTooltip);
+        this.setColour(blockData.colour);
         this.setHelpUrl("");
     }
 };
@@ -51,39 +144,33 @@ Blockly.Blocks[blockName] = {
     init: function () {
         this.jsonInit(blockData);
         this.setMutator(new Blockly.Mutator([]));
+        this.connectionCache = {}
         this.inputs_ = []
-        for (let i = 0; i < amountOfInputs; i++) {
-            this.inputs_.push(i < 3)
-        }
     },
-
-
     mutationToDom: function () {
-        if (!this.inputs_) {
-            return null;
-        }
         const container = document.createElement("mutation");
         for (let i = 0; i < this.inputs_.length; i++) {
-            if (this.inputs_[i]) container.setAttribute(BORDER_FIELDS[i], this.inputs_[i])
+            container.setAttribute(this.inputs_[i], 'true')
         }
         return container;
     },
 
     domToMutation: function (xmlElement) {
-        for (let i = 0; i < this.inputs_.length; i++) {
-            this.inputs_[i] = xmlElement.getAttribute(BORDER_FIELDS[i].toLowerCase()) == "true";
+        for (let i = 0; i < inputs.length; i++) {
+            const input = inputs[i]
+            if (xmlElement.getAttribute(input.id) === "true") this.inputs_.push(input.id)
         }
         this.updateShape_();
     },
 
     decompose: function (workspace) {
         const containerBlock = workspace.newBlock(menuName);
-        for (let i = 0; i < this.inputs_.length; i++) {
-            BaseBlockly.Msg[BORDER_FIELDS[i]] = names[i];
+        for (let i = 0; i < inputs.length; i++) {
+            const input = inputs[i]
             containerBlock.appendDummyInput()
                 .setAlign(Blockly.ALIGN_RIGHT)
-                .appendField(names[i])
-                .appendField(new Blockly.FieldCheckbox(this.inputs_[i] ? "TRUE" : "FALSE"), BORDER_FIELDS[i].toUpperCase());
+                .appendField(input.name)
+                .appendField(new Blockly.FieldCheckbox(this.inputs_.includes(input.id) ? "TRUE" : "FALSE"), input.id);
         }
         containerBlock.initSvg();
         return containerBlock;
@@ -91,85 +178,48 @@ Blockly.Blocks[blockName] = {
 
     compose: function (containerBlock) {
         // Set states
-        for (let i = 0; i < this.inputs_.length; i++) {
-            this.inputs_[i] = (containerBlock.getFieldValue(BORDER_FIELDS[i].toUpperCase()) == "TRUE");
+        this.inputs_ = []
+        for (let i = 0; i < inputs.length; i++) {
+            const input = inputs[i]
+            if (containerBlock.getFieldValue(input.id) === "TRUE") {
+                this.inputs_.push(input.id);
+            }
         }
         this.updateShape_();
     },
 
     updateShape_: function () {
-        for (let i = 0; i < this.inputs_.length; i++) {
-            if ((!this.inputs_[i]) && (this.getInput(BORDER_FIELDS[i].toUpperCase()))) this.removeInput(BORDER_FIELDS[i].toUpperCase());
+        for (let i = 0; i < inputs.length; i++) {
+            const inputData = inputs[i]
+            const input = this.getInput(inputData.id)
+            if (!input) continue
+            this.connectionCache[inputData.id] = input.targetConnection
+            this.removeInput(inputData.id)
         }
-        for (let i = 0; i < this.inputs_.length; i++) {
-            if ((this.inputs_[i]) && (!(this.getInput(BORDER_FIELDS[i].toUpperCase())))) {
-                BaseBlockly.Msg[BORDER_FIELDS[i]] = names[i];
-                this.appendValueInput(BORDER_FIELDS[i].toUpperCase())
-                    .setCheck(BORDER_TYPES[i])
-                    .setAlign(Blockly.ALIGN_RIGHT)
-                    .appendField(names[i]);
-            }
+        for (let index = 0; index < this.inputs_.length; index++) {
+            const input = findInputDataFor(this.inputs_[index])
+            const newInput = this.appendValueInput(input.id)
+                .setCheck(input.type)
+                .setAlign(Blockly.ALIGN_RIGHT)
+                .appendField(input.text);
+            const connection = newInput.connection
+            if (this.connectionCache[input.id]) connection.connect(this.connectionCache[input.id])
+            if (typeof input.onUse === 'function') input.onUse.apply(this)
         }
     }
-
 };
 
 Blockly.JavaScript[blockName] = function (block) {
-    console.log(this.inputs_)
-    // code should be the first couple lines of your code before the inputs
-    let message = '';
-    let color = '';
-    let title = '';
-    let url = '';
-    let author = '';
-    let description = '';
-    let thumbnail = '';
-    let fields = '';
-    let image = '';
-    let timestamp = '';
-    let footer = '';
-    // check if the inputs exist before adding them to the exported code
-    if (this.inputs_[1]) {
-        color = `color: String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[1], Blockly.JavaScript.ORDER_NONE)}), \n`
+    const exportValues = []
+    let message = ''
+    for (let i = 0; i < this.inputs_.length; i++) {
+        const input = findInputDataFor(inputs[i])
+        if (input.id === 'message') {
+            message = input.export(block)
+            continue
+        }
+        exportValues.push(input.export(block))
     }
-    if (this.inputs_[2]) {
-        title = `title: String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[2], Blockly.JavaScript.ORDER_NONE)}), \n`
-    }
-    if (this.inputs_[3]) {
-        url = `url: String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[3], Blockly.JavaScript.ORDER_NONE)}), \n`
-    }
-    if (this.inputs_[4]) {
-        author = Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[4], Blockly.JavaScript.ORDER_ATOMIC)
-    }
-    if (this.inputs_[5]) {
-        description = `description: String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[5], Blockly.JavaScript.ORDER_NONE)}), \n`
-    }
-    if (this.inputs_[6]) {
-        thumbnail = `thumbnail: {
-            url: String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[6], Blockly.JavaScript.ORDER_NONE)})
-        }, \n`
-    }
-    if (this.inputs_[7]) {
-        fields = Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[7], Blockly.JavaScript.ORDER_ATOMIC)
-    }
-    if (this.inputs_[8]) {
-        image = `image: {
-            url: String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[8], Blockly.JavaScript.ORDER_NONE)})
-        }, \n`
-    }
-    if (this.inputs_[9]) {
-        timestamp = `timestamp: new date(String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[9], Blockly.JavaScript.ORDER_NONE)})),`
-    }
-    if (this.inputs_[10]) {
-        footer = Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[10], Blockly.JavaScript.ORDER_ATOMIC)
-    }
-    if (this.inputs_[0]) {
-      message = `content: String(${Blockly.JavaScript.valueToCode(block, BORDER_FIELDS[0], Blockly.JavaScript.ORDER_NONE)}), `
-    }
-    const code = `${message}embeds: [{
-${color}${title}${url}${author}${description}${thumbnail}${fields}${image}${timestamp}${footer}}]`;
+    const code = `${message}embeds: [{${exportValues.join('')}}]`;
     return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
-
-
-
