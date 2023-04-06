@@ -2799,6 +2799,7 @@ export default (favorites) => {
         </category>
         <category name="Fsh API" colour="#50494e">
             <label text="Fsh api"/>
+            <button text="Go to fsh api" href="https://google.com"/>
             <label text="Text api"/>
             <block type="lars-inv_fsh_api_html"/>
                 <value name="url">
