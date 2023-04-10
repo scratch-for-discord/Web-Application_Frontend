@@ -2799,16 +2799,13 @@ export default (favorites) => {
         </category>
         <category name="Fsh API" colour="#50494e">
             <label text="Fsh api"/>
-            <button text="Go to fsh api" href="https://google.com"/>
             <label text="Text api"/>
             <block type="lars-inv_fsh_api_html"/>
-                <value name="url">
-                    <shadow type="text">
-                        <field name="TEXT">https://google.com</field>
-                    </shadow>
-                </value>
+            <block type="lars-inv_fsh_api_filter"/>
+            <block type="lars-inv_fsh_api_censor"/>
+            <sep gap="32"/>
             <label text="Image api"/>
-            <block type="inv_fsh_api_animal"/>
+            <block type="inv_fsh_api_animal2"/>
         </category>
     </category>
     <category name="Securing" colour="#4c61ff">
