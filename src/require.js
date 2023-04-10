@@ -204,7 +204,7 @@ export default async function require(array, code, js) {
     if (js.includes("xml2json({")) {
         array.push(`const xml2json = require('xml-to-json')`)
     }
-    if (js.includes("S4D_APP_PKG_axios")||js.includes("_S4D_inventionFSHapiAnimal")||js.includes("_S4D_inventionFSHapiCraiyon")||js.includes("_S4D_inventionFSHapiHtml")) {
+    if (js.includes("S4D_APP_PKG_axios")||js.includes("_S4D_inventionFSHapi")) {
         array.push(`const S4D_APP_PKG_axios = require('axios')`)
     }
     if (js.includes("S4D_APP_MC_GET")) {
@@ -278,49 +278,21 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
     if (js.includes("OpenAIApi")) {
         array.push('const { Configuration, OpenAIApi } = require("openai");')
     }
-    if (js.includes("_S4D_inventionFSHapiAnimal")) {
-        code.push(`async function _S4D_inventionFSHapiAnimal(_S4D_image_anfsh) {
-            let _S4D_inventionFSHapiAnimal;
+    if (js.includes("_S4D_inventionFSHapi")) {
+        code.push(`async function _S4D_inventionFSHapi(_S4D_fshurl) {
+            let _S4D_fshresponse;
             try {
-                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/animal?animal=' + _S4D_image_anfsh)
-                _S4D_inventionFSHapiAnimal = response.data.image;
+                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/' + _S4D_fshurl)
+                _S4D_fshresponse = String(response.data);
+                _S4D_fshresponse = _S4D_fshresponse.slice((_S4D_fshresponse.indexOf('":"') + 3), _S4D_fshresponse.length);
+                _S4D_fshresponse = _S4D_fshresponse.slice(0, _S4D_fshresponse.indexOf('"'));
             } catch (error) {
-                //return discord image failed loading if there was and error
-                _S4D_inventionFSHapiAnimal = "https://i.ibb.co/N1xhDTD/image.png"
-                //also log
-                console.error('An error occured when fetching animal')
+                // if error return empty and log
+                _S4D_fshresponse = ""
+                console.error('Fsh api error!')
+                console.error(error)
             }
-            return _S4D_inventionFSHapiAnimal;
-        }`)
-    }
-    /*if (js.includes("_S4D_inventionFSHapiCraiyon")) {
-        code.push(`async function _S4D_inventionFSHapiCraiyon(_S4D_image_crfsh) {
-            let _S4D_inventionFSHapiCraiyon;
-            try {
-                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/imagine?text=' + _S4D_image_crfsh)
-                _S4D_inventionFSHapiCraiyon = response.data.image;
-            } catch (error) {
-                //return discord image failed loading if there was and error
-                _S4D_inventionFSHapiCraiyon = "https://i.ibb.co/N1xhDTD/image.png"
-                //also log
-                console.error('An error occured when fetching craiyon')
-            }
-            return _S4D_inventionFSHapiCraiyon;
-        }`)
-    }*/
-    if (js.includes("_S4D_inventionFSHapiHtml")) {
-        code.push(`async function _S4D_inventionFSHapiHtml(_S4D_image_htfsh) {
-            let _S4D_inventionFSHapiHtml;
-            try {
-                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/page?url=' + _S4D_image_htfsh)
-                _S4D_inventionFSHapiHtml = response.data.content;
-            } catch (error) {
-                //return empty string if error
-                _S4D_inventionFSHapiHtml = ""
-                //also log
-                console.error('An error occured when fetching html')
-            }
-            return _S4D_inventionFSHapiHtml;
+            return _S4D_fshresponse;
         }`)
     }
 }
