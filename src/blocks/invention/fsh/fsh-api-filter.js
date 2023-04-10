@@ -2,7 +2,7 @@
 
 import Blockly from "blockly/core";
 
-const blockName = "inv_fsh_api_censor";
+const blockName = "inv_fsh_api_filter";
 
 const blockData = {
   "message0": "are there bad words in %1",
