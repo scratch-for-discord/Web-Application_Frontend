@@ -5,12 +5,11 @@ import Blockly from "blockly/core";
 const blockName = "inv_fsh_api_censor";
 
 const blockData = {
-  "message0": "Get HTML from %1",
+  "message0": "in text %1 censor bad words",
   "args0": [
     {
       "type": "input_value",
-      "name": "url",
-      "align": "CENTRE"
+      "name": "NAME"
     }
   ],
   "inputsInline": true,
@@ -27,10 +26,10 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.JavaScript[blockName] = function(block) {
-  var value_url = Blockly.JavaScript.valueToCode(block, 'url', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_url = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   value_url = encodeURIComponent(value_url.toLowerCase());
 
-  var code = `await _S4D_inventionFSHapiHtml('${value_url}')`;
+  var code = `await _S4D_inventionFSHapiHtml('censor?text=${value_url}')`;
 
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
