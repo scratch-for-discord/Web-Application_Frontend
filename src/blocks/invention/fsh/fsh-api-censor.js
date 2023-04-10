@@ -13,7 +13,7 @@ const blockData = {
   "inputsInline": true,
   "output": "String",
   "colour": "#1a75ba",
-  "tooltip": "Gets the html code of a website (e.g. https://google.com)",
+  "tooltip": "Responds with censored version of text inputed",
   "helpUrl": ""
 };
 
@@ -27,7 +27,7 @@ Blockly.JavaScript[blockName] = function(block) {
   var value_url = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   value_url = encodeURIComponent(value_url.toLowerCase());
 
-  var code = `await _S4D_inventionFSHapiHtml('censor?text=${value_url}')`;
+  var code = `await _S4D_inventionFSHapi('censor?text=${value_url}')`;
 
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
