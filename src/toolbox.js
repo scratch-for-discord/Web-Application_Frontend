@@ -2803,7 +2803,6 @@ export default (favorites) => {
             <block type="lars-inv_fsh_api_html"/>
             <block type="inv_fsh_api_filter"/>
             <block type="inv_fsh_api_censor"/>
-            <sep gap="32"/>
             <label text="Image api"/>
             <block type="inv_fsh_api_animal2"/>
         </category>
