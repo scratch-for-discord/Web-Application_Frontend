@@ -1,5 +1,3 @@
-// temporary
-
 import Blockly from "blockly/core";
 
 const blockName = "inv_fsh_api_censor";
