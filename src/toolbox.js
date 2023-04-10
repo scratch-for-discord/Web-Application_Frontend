@@ -2800,9 +2800,9 @@ export default (favorites) => {
         <category name="Fsh API" colour="#50494e">
             <label text="Fsh api"/>
             <label text="Text api"/>
-            <block type="lars-inv_fsh_api_html"/>
             <block type="inv_fsh_api_filter"/>
             <block type="inv_fsh_api_censor"/>
+            <block type="lars-inv_fsh_api_html"/>
             <label text="Image api"/>
             <block type="inv_fsh_api_animal2"/>
         </category>
