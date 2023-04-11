@@ -282,10 +282,8 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
         code.push(`async function _S4D_inventionFSHapi(_S4D_fshurl) {
             let _S4D_fshresponse;
             try {
-                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/' + _S4D_fshurl)
+                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/' + _S4D_fshurl + '&plain=1')
                 _S4D_fshresponse = String(response.data);
-                _S4D_fshresponse = _S4D_fshresponse.slice((_S4D_fshresponse.indexOf('":"') + 3), _S4D_fshresponse.length);
-                _S4D_fshresponse = _S4D_fshresponse.slice(0, _S4D_fshresponse.indexOf('"'));
             } catch (error) {
                 // if error return empty and log
                 _S4D_fshresponse = ""
