@@ -279,11 +279,10 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
         array.push('const { Configuration, OpenAIApi } = require("openai");')
     }
     if (js.includes("_S4D_inventionFSHapi")) {
-        code.push(`async function _S4D_inventionFSHapi(_S4D_fshurl) {
+        code.push(`async function _S4D_inventionFSHapi(_S4D_fshurl, _S4D_fshquery) {
             let _S4D_fshresponse;
             try {
-                const response = await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/' + _S4D_fshurl + '&plain=1')
-                _S4D_fshresponse = String(response.data);
+                _S4D_fshresponse = String(await S4D_APP_PKG_axios.get('https://fsh-bot.frostzzone.repl.co/api/' + _S4D_fshurl + encodeURIComponent(_S4D_fshquery) + '&plain=1'))
             } catch (error) {
                 // if error return empty and log
                 _S4D_fshresponse = ""
