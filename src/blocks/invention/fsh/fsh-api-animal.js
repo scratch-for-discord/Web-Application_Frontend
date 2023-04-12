@@ -3,7 +3,7 @@ import Blockly from "blockly/core";
 const blockName = "inv_fsh_api_animal";
 
 const blockData = {
-  "message0": "get a random image of %1 from the fsh api",
+  "message0": "get a random image of %1 from the fsh api (old block, use new)",
   "args0": [
     {
       "type": "field_input",
@@ -13,7 +13,7 @@ const blockData = {
   ],
   "output": "String",
   "colour": '#50494e',
-  "tooltip": "Gets a random animal picture (link) from the fsh api",
+  "tooltip": "this is a old version of fsh api animal image block (should still work but will not recive further updates)",
   "helpUrl": "https://fsh-bot.frostzzone.repl.co/api/animal"
 };
 
