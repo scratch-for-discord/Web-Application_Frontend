@@ -25,9 +25,8 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block) {
   var text_type = block.getFieldValue('TYPE');
-  text_type = encodeURIComponent(text_type.toLowerCase());
   
-  var code = `await _S4D_inventionFSHapi('animal?animal=${text_type}')`;
+  var code = `await _S4D_inventionFSHapi('animal?animal=', ${text_type})`;
 
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
