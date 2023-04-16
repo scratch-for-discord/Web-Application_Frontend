@@ -13,7 +13,8 @@ const blockData = {
       "name": "code"
     }
   ],
-  "output": "String",
+  "previousStatement": null,
+  "nextStatement": null,
   "colour": "#4C97FF",
   "tooltip": "Gets a list of backup ids",
   "helpUrl": ""
