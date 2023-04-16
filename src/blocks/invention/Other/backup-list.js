@@ -18,7 +18,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function(block) {
+Blockly.JavaScript[blockName] = function() {
   var code = `_S4D_backups`;
 
   return [code, Blockly.JavaScript.ORDER_NONE];
