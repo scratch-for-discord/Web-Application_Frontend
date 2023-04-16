@@ -55,7 +55,7 @@
   "BACKUP_ID": "backup id",
   "SET_REPUTATION": "set reputation %1",
   "SET_RADIUS": "set radius of edges %1",
-  "CREATE_BACKUP_OF_GUILD_THEN": "create backupd of guild",
+  "CREATE_BACKUP_OF_GUILD_THEN": "create backup of guild",
   "DISCORDBACKUP": "discord-backup",
   "BACKUP_LOAD": "load backup in %1 backup id %2",
   "SEND_IN_CHANNEL": "send %1 in channel %2 with goodbye/welcome/rankcard %3",
