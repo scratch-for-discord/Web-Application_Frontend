@@ -1683,10 +1683,13 @@ export default (favorites) => {
     </category>
     <category name="Utilities" colour="#03b6fc">
         <category name="Server Backups" colour="#03a1fc">
+            <label text="Server backups"/>
             <block type="s4d_create_backup_of_guild_then"/>
+            <block type="s4d_backup_id"/>
             <block type="s4d_backup_load"/>
             <block type="s4d_delete_backup"/>
-            <block type="s4d_backup_id"/>
+            <block type="inv_backup_list_get"/>
+            <block type="inv_backup_list"/>
         </category>
         <category name="Giveaways" colour="#0390fc">
             <block type="s4d_create_giveaway"/>
