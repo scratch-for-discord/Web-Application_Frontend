@@ -5,8 +5,6 @@ const blockName = "inv_backup_list";
 const blockData = {
   "message0": "backups",
   "output": "Array",
-  "previousStatement": null,
-  "nextStatement": null,
   "colour": "#187795",
   "tooltip": "Gets list of backup ids",
   "helpUrl": ""
