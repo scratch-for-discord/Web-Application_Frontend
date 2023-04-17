@@ -1,4 +1,2 @@
-import "./fsh-api-animal.js"
-//import "./fsh-api-craiyon.js"
-
+import "./fsh/"
 import "./Other/"
