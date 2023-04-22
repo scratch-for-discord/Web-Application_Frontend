@@ -16,7 +16,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockname'] = function() {
+Blockly.JavaScript[blockname] = function() {
   var code = `chart.toURL()`;
   
   return [code, Blockly.JavaScript.ORDER_NONE];
