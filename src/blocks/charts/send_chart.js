@@ -6,7 +6,7 @@ const blockName = "send_chart";
 
 const blockData = {
   "type": "send_chart",
-  "message0": "Send chart",
+  "message0": "send chart",
   "output": null,
   "colour": 75,
   "tooltip": "",
