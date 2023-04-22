@@ -2630,6 +2630,7 @@ export default (favorites) => {
             <label text="Chart Blocks"/>
             <block type="create_chart"/>
             <block type="send_chart"/>
+            <block type="inv_chart_to_url"/>
         </category>
         <category name="Message Games" colour="#5ba58b">
             <label text="Akinator gamemodes: character, animal, object" web-class="boldtext"/>
