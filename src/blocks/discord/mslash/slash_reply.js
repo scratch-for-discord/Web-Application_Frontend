@@ -38,25 +38,33 @@ Blockly.Blocks[blockName] = {
 Blockly.JavaScript[blockName] = function (block) {
     const content = Blockly.JavaScript.valueToCode(block, "CONTENT", Blockly.JavaScript.ORDER_ATOMIC) || "No content"
     const boolean = Blockly.JavaScript.valueToCode(block, "BOOLEAN", Blockly.JavaScript.ORDER_ATOMIC) || true
-    const button = Blockly.JavaScript.valueToCode(block, "BUTTON", Blockly.JavaScript.ORDER_ATOMIC);
-    let text1 = button.replace("'", "")
-    let button2 = text1.replace("'", "")
+    let button = Blockly.JavaScript.valueToCode(block, "BUTTON", Blockly.JavaScript.ORDER_ATOMIC);
+    if (!button) {
+        button = ''
+    } else {
+        const buttonArg = block.getInput('BUTTON')
+        const buttonBlock = buttonArg.connection.targetConnection.sourceBlock_
+        if (buttonBlock.type === 'text' || buttonBlock.type === 'jg_text_remake_paragraph_quotes') {
+            button = button.slice(1, -1)
+        }
+    }
+
     if (block.getInput("CONTENT").connection.targetConnection) {
         const contentType = block.getInput("CONTENT").connection.targetConnection.getSourceBlock().outputConnection.check_ ?
             block.getInput("CONTENT").connection.targetConnection.getSourceBlock().outputConnection.check_[0] :
             null;
         if ((contentType === "Embed")) {
-            const code = `await interaction.reply({ embeds: [${content}], ephemeral: ${boolean || false}, components: [${button2}] });\n`;
+            const code = `await interaction.reply({ embeds: [${content}], ephemeral: ${boolean || false}, components: [${button}] });\n`;
             return code;
         } else if ((contentType === "MessageEmbed")) {
-            const code = `await interaction.reply({${content}, ephemeral: ${boolean || false}, components: [${button2}] });\n`;
+            const code = `await interaction.reply({${content}, ephemeral: ${boolean || false}, components: [${button}] });\n`;
             return code;
         } else {
-            const code = `await interaction.reply({ content: ${content}, ephemeral: ${boolean || false}, components: [${button2}] });\n`;
+            const code = `await interaction.reply({ content: ${content}, ephemeral: ${boolean || false}, components: [${button}] });\n`;
             return code;
         }
     } else {
-        const code = `await interaction.reply({ content: ${content}, ephemeral: ${boolean || false} , components: [${button2}] });\n`;
+        const code = `await interaction.reply({ content: ${content}, ephemeral: ${boolean || false} , components: [${button}] });\n`;
         return code;
     }
 };
