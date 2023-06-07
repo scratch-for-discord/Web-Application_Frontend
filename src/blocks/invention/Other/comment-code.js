@@ -18,8 +18,8 @@ const blockData = {
       "name": "NAME"
     }
   ],
-  "colour": 60,
-  "tooltip": "",
+  "colour": "#deb40d",
+  "tooltip": "Makes code inside into a comment aka code no workie",
   "helpUrl": ""
 }
 
@@ -30,8 +30,13 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.JavaScript['inv_chart_to_url'] = function() {
-  // this is giving me pain
-  var code = `chart.toURL()`;
+  var text_name = block.getFieldValue('NAME');
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var code = `/*
+  ${text_name}
   
-  return [code, Blockly.JavaScript.ORDER_NONE];
+  ${statements_name}
+  */`;
+  
+  return code;
 };
