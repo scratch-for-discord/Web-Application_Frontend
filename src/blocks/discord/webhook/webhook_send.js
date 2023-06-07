@@ -32,7 +32,7 @@ Blockly.JavaScript[blockName] = function (block) {
             block.getInput("CONTENT").connection.targetConnection.getSourceBlock().outputConnection.check_[0] :
             null;
         if ((contentType === "MessageEmbed") || (!contentType && typeof contentType === "object")) {
-            const code = `gwebhook.send(${content});\n`;
+            const code = `gwebhook.send({${content}});\n`;
             return code;
         } else {
             const code = `gwebhook.send(String(${content}));\n`;
