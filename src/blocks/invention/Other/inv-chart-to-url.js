@@ -3,7 +3,6 @@ import Blockly from "blockly/core";
 const blockName = "inv_chart_to_url";
 
 const blockData = {
-  "type": "inv_chart_to_url",
   "message0": "chart url",
   "output": null,
   "colour": 75,
