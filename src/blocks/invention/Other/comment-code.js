@@ -3,7 +3,7 @@ import Blockly from "blockly/core";
 const blockName = "inv_comment_code";
 
 const blockData = {
-  "message0": "aaa %1 %2 %3",
+  "message0": "Comment code, with comment %1 %2 %3",
   "args0": [
     {
       "type": "field_input",
