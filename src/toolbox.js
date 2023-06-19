@@ -3464,6 +3464,9 @@ export default (favorites) => {
         <block type="jg_comments_connected_image">
             <field name="TEXT">https://media.discordapp.net/attachments/914411539887456296/984121680458829835/ef5d4de4c598bda58c6edc09e9478b2d.png</field>
         </block>
+        <label text="Connected comments to help during coding">
+        <block type="inv_collapse_code">
+        <block type="inv_comment_code">
     </category>
 </xml>
 `
