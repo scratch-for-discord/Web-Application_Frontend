@@ -1866,6 +1866,11 @@ export default (favorites) => {
                 <shadow type="s4d_message_channel"/>
             </value>
         </block>
+        <block type="inv_channel_type">
+            <value name="Channel">
+                <shadow type="s4d_message_channel"/>
+            </value>
+        </block>
         <block type="s4d_channel_ahq_name"/>
         <block type="s4d_channel_id"/>
         <block type="monaco_position_of_channel"/>
