@@ -7,8 +7,7 @@ const blockData = {
   "args0": [
     {
       "type": "input_value",
-      "name": "Channel",
-      "check": "channel"
+      "name": "Channel"
     }
   ],
   "output": "String",
