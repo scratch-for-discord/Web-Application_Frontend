@@ -1,6 +1,6 @@
 import Blockly from "blockly/core";
 
-const blockName = "inv_comment_code";
+const blockName = "inv_collapse_code";
 
 const blockData = {
   "message0": "Collapse block %1 %2",
