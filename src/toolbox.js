@@ -1683,10 +1683,13 @@ export default (favorites) => {
     </category>
     <category name="Utilities" colour="#03b6fc">
         <category name="Server Backups" colour="#03a1fc">
+            <label text="Server backups"/>
             <block type="s4d_create_backup_of_guild_then"/>
+            <block type="s4d_backup_id"/>
             <block type="s4d_backup_load"/>
             <block type="s4d_delete_backup"/>
-            <block type="s4d_backup_id"/>
+            <block type="inv_backup_list_get"/>
+            <block type="inv_backup_list"/>
         </category>
         <category name="Giveaways" colour="#0390fc">
             <block type="s4d_create_giveaway"/>
@@ -1859,6 +1862,11 @@ export default (favorites) => {
         </block>
         <label text="Channel Info"/>
         <block type="frost_channel_types">
+            <value name="Channel">
+                <shadow type="s4d_message_channel"/>
+            </value>
+        </block>
+        <block type="inv_channel_type">
             <value name="Channel">
                 <shadow type="s4d_message_channel"/>
             </value>
@@ -2627,6 +2635,7 @@ export default (favorites) => {
             <label text="Chart Blocks"/>
             <block type="create_chart"/>
             <block type="send_chart"/>
+            <block type="inv_chart_to_url"/>
         </category>
         <category name="Message Games" colour="#5ba58b">
             <label text="Akinator gamemodes: character, animal, object" web-class="boldtext"/>
@@ -3460,6 +3469,9 @@ export default (favorites) => {
         <block type="jg_comments_connected_image">
             <field name="TEXT">https://media.discordapp.net/attachments/914411539887456296/984121680458829835/ef5d4de4c598bda58c6edc09e9478b2d.png</field>
         </block>
+        <label text="Connected comments to help during coding"/>
+        <block type="inv_collapse_code"/>
+        <block type="inv_comment_code"/>
     </category>
 </xml>
 `
