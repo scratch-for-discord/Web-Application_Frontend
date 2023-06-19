@@ -13,6 +13,8 @@ const blockData = {
       "name": "NAME"
     }
   ],
+  "previousStatement": null,
+  "nextStatement": null,
   "colour": "#deb40d",
   "tooltip": "Block that makes it easy to collapse multiple block that you can't collapse at the same time",
   "helpUrl": ""
