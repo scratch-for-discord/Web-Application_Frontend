@@ -18,6 +18,8 @@ const blockData = {
       "name": "NAME"
     }
   ],
+  "previousStatement": null,
+  "nextStatement": null,
   "colour": "#deb40d",
   "tooltip": "Makes code inside into a comment aka code no workie",
   "helpUrl": ""
