@@ -72,11 +72,11 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.JavaScript[blockName] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  /*var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var value_token = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
   var value_client_id = Blockly.JavaScript.valueToCode(block, 'client id', Blockly.JavaScript.ORDER_ATOMIC);
   var value_client_secret = Blockly.JavaScript.valueToCode(block, 'client secret', Blockly.JavaScript.ORDER_ATOMIC);
-  var dropdown_drop_color = block.getFieldValue('drop-color');
+  var dropdown_drop_color = block.getFieldValue('drop-color');*/
   // TODO: Assemble JavaScript into code variable.
   var code = `// temp`;
   return code;
