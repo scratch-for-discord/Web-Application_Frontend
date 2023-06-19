@@ -79,7 +79,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript['soft_ui_dashboard'] = function() {
+Blockly.JavaScript[blockName] = function() {
   /*var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
   var number_name = block.getFieldValue('NAME');
   var value_token = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
