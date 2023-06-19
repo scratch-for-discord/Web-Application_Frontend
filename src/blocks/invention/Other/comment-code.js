@@ -8,7 +8,7 @@ const blockData = {
     {
       "type": "field_input",
       "name": "NAME",
-      "text": "default"
+      "text": "comment"
     },
     {
       "type": "input_dummy"
