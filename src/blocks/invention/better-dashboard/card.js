@@ -25,9 +25,9 @@ const blockData = {
       "name": "image"
     },
     {
-      "type": "field_checkbox",
-      "name": "check",
-      "checked": true
+      "type": "input_value",
+      "name": "link",
+      "check": "Boolean"
     },
     {
       "type": "field_input",
@@ -36,6 +36,7 @@ const blockData = {
     }
   ],
   "inputsInline": false,
+  "previousStatement": null,
   "colour": 210,
   "tooltip": "",
   "helpUrl": ""
