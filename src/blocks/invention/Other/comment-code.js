@@ -29,7 +29,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript['inv_chart_to_url'] = function() {
+Blockly.JavaScript['inv_chart_to_url'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
   var code = `/*
