@@ -3,7 +3,7 @@ import Blockly from "blockly/core";
 const blockName = "inv/lars_soft_ui";
 
 const blockData = {
-  "message0": "Start SoftUI Dashboard with %1 Name %2 Port %3 %4 Token %5 Client ID %6 Client Secret %7 Support Email %8 Color Scheme %9",
+  "message0": "Start SoftUI Dashboard with %1 Name %2 Port %3 %4 Token %5 License %6 Client ID %7 Client Secret %8 Support Email %9 Color Scheme %10 %11 Define Card %12 Inputs %13",
   "args0": [
     {
       "type": "input_dummy"
@@ -14,7 +14,7 @@ const blockData = {
     },
     {
       "type": "field_number",
-      "name": "NAME",
+      "name": "port",
       "value": 0
     },
     {
@@ -23,6 +23,10 @@ const blockData = {
     {
       "type": "input_value",
       "name": "token"
+    },
+    {
+      "type": "input_value",
+      "name": "license"
     },
     {
       "type": "input_value",
@@ -65,6 +69,17 @@ const blockData = {
           "yellow"
         ]
       ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "card"
+    },
+    {
+      "type": "input_statement",
+      "name": "input"
     }
   ],
   "inputsInline": false,
@@ -72,7 +87,6 @@ const blockData = {
   "tooltip": "",
   "helpUrl": ""
 }
-
 Blockly.Blocks[blockName] = {
     init: function() {
         this.jsonInit(blockData);
