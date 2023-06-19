@@ -71,7 +71,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript['softui_dashboard'] = function(block) {
+Blockly.JavaScript[blockName] = function(block) {
   var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
   var value_token = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
   var value_client_id = Blockly.JavaScript.valueToCode(block, 'client id', Blockly.JavaScript.ORDER_ATOMIC);
