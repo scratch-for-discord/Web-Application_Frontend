@@ -3,7 +3,7 @@ import Blockly from "blockly/core";
 const blockName = "inv/lars_soft_ui";
 
 const blockData = {
-  "message0": "Start SoftUI Dashboard with %1 Name %2 Port %3 %4 Token %5 License %6 Client ID %7 Client Secret %8 Support Email %9 Owner ID's %10 Favicon (url) %11 Color Scheme %12 %13 %14 %15 Define Card %16 Inputs %17",
+  "message0": "Start SoftUI Dashboard with %1 Name %2 Port %3 %4 Token %5 License %6 Client ID %7 Client Secret %8 Support Email %9 Owner ID's %10 Required permissions to access %11 Favicon (url) %12 Color Scheme %13 %14 %15 %16 Define Card %17 Inputs %18",
   "args0": [
     {
       "type": "input_dummy"
@@ -43,6 +43,10 @@ const blockData = {
     {
       "type": "input_value",
       "name": "owner"
+    },
+    {
+      "type": "input_value",
+      "name": "permissions"
     },
     {
       "type": "input_value",
