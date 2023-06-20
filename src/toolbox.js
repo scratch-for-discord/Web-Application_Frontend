@@ -2226,7 +2226,8 @@ export default (favorites) => {
     </category>
     <sep class="bt"/>
     <category name="Websites" colour="#4C97FF">
-        <category name="Dashboard" colour="#4C93FF">
+        <category name="Easy dashboard" colour="#4C93FF">
+            <label text="easy-discord-dashboard package"/>
             <label text="Initialize a new dashboard"/>
             <block type="initialize_dashboard"/>
             <label text="[OPTIONAL] Cookies"/>
@@ -2281,7 +2282,10 @@ export default (favorites) => {
             <block type="dash_guild_id"/>
             <block type="dash_value"/>
         </category>
-        <category name="Creation" colour="#4c8eff">
+        <category name="Dashboard" colour="#4c8eff">
+            <label text="discord-dashboard package"/>
+        </category>
+        <category name="Creation" colour="#4c85ff">
             <block type="jg_express_start_website_then_using_port"/>
             <block type="jg_express_website_on_page_on_request_type_do">
                 <value name="PAGE">
@@ -2352,8 +2356,8 @@ export default (favorites) => {
                 </value>
             </block>
         </category>
-        <category name="Requests" colour="#4c8bff">
-            <category name="Simple" colour="#4c79ff">
+        <category name="Requests" colour="#4c7cff">
+            <category name="Simple" colour="#4c73ff">
                 <label text="Want to do cool things with json requests? Check out PooPoo API" web-class="boldtext"/>
                 <label text="https://poopoo-api.vercel.app/" web-class="boldtext"/>
                 <block type="s4d_http_get_then"/>
