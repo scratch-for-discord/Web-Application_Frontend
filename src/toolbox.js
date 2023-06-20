@@ -2284,6 +2284,16 @@ export default (favorites) => {
         </category>
         <category name="Dashboard" colour="#4c8eff">
             <label text="discord-dashboard package"/>
+            <label text="Start a new dashboard"/>
+            <block type="inv/lars_soft_ui">
+                <value name="name">
+                    <shadow type="TEXT">
+                        <field name="TEXT">Dashboard</field>
+                    </shadow>
+                </value
+            </block>
+            <block type="inv/lars_soft_ui_card"/>
+            <block type="inv/lars_soft_ui_text_input"/>
         </category>
         <category name="Creation" colour="#4c85ff">
             <block type="jg_express_start_website_then_using_port"/>
