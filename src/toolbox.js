@@ -2296,6 +2296,7 @@ export default (favorites) => {
             <block type="inv/lars_soft_ui_text_input"/>
             <label text="Data"/>
             <block type="inv/lars_soft_ui_data"/>
+            <block type="inv/lars_soft_ui_permissions"/>
         </category>
         <category name="Creation" colour="#4c85ff">
             <block type="jg_express_start_website_then_using_port"/>
