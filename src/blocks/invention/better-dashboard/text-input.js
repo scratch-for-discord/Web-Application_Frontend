@@ -3,39 +3,64 @@ import Blockly from "blockly/core";
 const blockName = "inv/lars_soft_ui_text_input";
 
 const blockData = {
-  "message0": "Add Text Input %1 Name %2 ID %3 Description %4 Set default input to %5 When user changes value %6 %7",
+  "message0": "Add new Text Input %1 Name %2 ID %3 Description %4 Placeholder %5 Minimum Characters %6 Maximum Characters %7 Disabled %8 Required %9 Set default input to %10 When user changes value %11 %12",
   "args0": [
     {
       "type": "input_dummy"
     },
     {
       "type": "input_value",
-      "name": "Name"
+      "name": "name"
     },
     {
       "type": "input_value",
-      "name": "ID"
+      "name": "id"
     },
     {
       "type": "input_value",
-      "name": "Description"
+      "name": "description"
     },
     {
       "type": "input_value",
-      "name": "default"
+      "name": "placeholder"
+    },
+    {
+      "type": "input_value",
+      "name": "min",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "max",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "disabled",
+      "check": "Boolean"
+    },
+    {
+      "type": "input_value",
+      "name": "required",
+      "check": "Boolean"
+    },
+    {
+      "type": "input_value",
+      "name": "current",
+      "check": "Boolean"
     },
     {
       "type": "input_dummy"
     },
     {
       "type": "input_statement",
-      "name": "new value"
+      "name": "NewValue"
     }
   ],
   "inputsInline": false,
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 160,
+  "colour": 230,
   "tooltip": "",
   "helpUrl": ""
 }
@@ -46,15 +71,30 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function() {
-  /*var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
-  var number_name = block.getFieldValue('NAME');
-  var value_token = Blockly.JavaScript.valueToCode(block, 'token', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_client_id = Blockly.JavaScript.valueToCode(block, 'client id', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_client_secret = Blockly.JavaScript.valueToCode(block, 'client secret', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_email = Blockly.JavaScript.valueToCode(block, 'email', Blockly.JavaScript.ORDER_ATOMIC);
-  var dropdown_drop_color = block.getFieldValue('drop-color');*/
+Blockly.JavaScript[blockName] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_id = Blockly.JavaScript.valueToCode(block, 'id', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_description = Blockly.JavaScript.valueToCode(block, 'description', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_placeholder = Blockly.JavaScript.valueToCode(block, 'placeholder', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_min = Blockly.JavaScript.valueToCode(block, 'min', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_max = Blockly.JavaScript.valueToCode(block, 'max', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_disabled = Blockly.JavaScript.valueToCode(block, 'disabled', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_required = Blockly.JavaScript.valueToCode(block, 'required', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_current = Blockly.JavaScript.valueToCode(block, 'current', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_newvalue = Blockly.JavaScript.statementToCode(block, 'NewValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = `{
+    optionId: '${value_id}',
+    optionName: "${value_name}",
+    optionDescription: "${value_description}",
+    optionType: DBD.formTypes.input('${value_placeholder}', ${value_min}, ${value_max}, ${value_disabeled}, ${value_required}),
+    getActualSet: async ({guild}) => {
+        return ${value_current};
+    },
+    setNew: async ({guild,newData}) => {
+        ${statements_newvalue}
+        return;
+    }
+},`;
   return code;
 };
