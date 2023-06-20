@@ -87,7 +87,7 @@ Blockly.JavaScript[blockName] = function(block) {
     optionId: '${value_id}',
     optionName: "${value_name}",
     optionDescription: "${value_description}",
-    optionType: DBD.formTypes.input('${value_placeholder}', ${value_min}, ${value_max}, ${value_disabeled}, ${value_required}),
+    optionType: DBD.formTypes.input('${value_placeholder}', ${value_min}, ${value_max}, ${value_disabled}, ${value_required}),
     getActualSet: async ({guild}) => {
         return ${value_current};
     },
