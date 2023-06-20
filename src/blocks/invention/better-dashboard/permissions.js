@@ -188,7 +188,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript['soft_ui_permissions'] = function(block) {
+Blockly.JavaScript[blockName] = function(block) {
   var dropdown_perm_drop = block.getFieldValue('perm_drop');
   
   var code = `DBD.DISCORD_FLAGS.Permissions.${dropdown_perm_drop}`;
