@@ -2294,6 +2294,7 @@ export default (favorites) => {
             </block>
             <block type="inv/lars_soft_ui_card"/>
             <block type="inv/lars_soft_ui_text_input"/>
+            <label text="Data"/>
             <block type="inv/lars_soft_ui_data"/>
         </category>
         <category name="Creation" colour="#4c85ff">
