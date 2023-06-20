@@ -2290,7 +2290,7 @@ export default (favorites) => {
                     <shadow type="TEXT">
                         <field name="TEXT">Dashboard</field>
                     </shadow>
-                </value
+                </value>
             </block>
             <block type="inv/lars_soft_ui_card"/>
             <block type="inv/lars_soft_ui_text_input"/>
