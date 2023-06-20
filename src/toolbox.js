@@ -2285,12 +2285,12 @@ export default (favorites) => {
         <category name="Dashboard" colour="#4c8eff">
             <label text="discord-dashboard package"/>
             <label text="Start a new dashboard"/>
-            <block type="inv/lars_soft_ui">
+            <block type="inv/lars_soft_ui"><!--
                 <value name="name">
                     <shadow type="TEXT">
                         <field name="TEXT">Dashboard</field>
                     </shadow>
-                </value>
+                </value>-->
             </block>
             <block type="inv/lars_soft_ui_card"/>
             <block type="inv/lars_soft_ui_text_input"/>
