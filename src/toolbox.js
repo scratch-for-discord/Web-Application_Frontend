@@ -2369,7 +2369,14 @@ export default (favorites) => {
                 </value>
             </block>
         </category>
-        <category name="Requests" colour="#4c7cff">
+        <category name="Html" colour="#4c7cff">
+            <label text="Create websites with Html"/>
+            <label text="can be used with the \"respond with text\" block in creation"/>
+            <block type="inv_html"/>
+            <block type="inv_html_head"/>
+            <block type="inv_html_body"/>
+        </catehory>
+        <category name="Requests" colour="#4c6aff">
             <category name="Simple" colour="#4c73ff">
                 <label text="Want to do cool things with json requests? Check out PooPoo API" web-class="boldtext"/>
                 <label text="https://poopoo-api.vercel.app/" web-class="boldtext"/>
@@ -2380,7 +2387,7 @@ export default (favorites) => {
                 <block type="gsa_http_get_buffer_then"/>
                 <block type="gsa_get_https_response_buffer"/>
             </category>
-            <category name="Advanced" colour="#4c6aff">
+            <category name="Advanced" colour="#4c61ff">
                 <block type="jg_web_request_advanced_new2_send_request_to_url_using_method_with_result_giving_request_headers_with_data_sections_then_if_error">
                     <value name="URL">
                         <block type="text">
@@ -2474,7 +2481,7 @@ export default (favorites) => {
             </category>
         </category>
     </category>
-    <category name="Applications" colour="#4c79ff">
+    <category name="Applications" colour="#4c58ff">
         <category name="Minecraft" colour="110">
             <category name="Java" colour="120">
                 <label text="Start by grabbing the server to get data from." web-class="boldtext"/>
