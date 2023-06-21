@@ -3,8 +3,11 @@ import Blockly from "blockly/core";
 const blockName = "inv_html";
 
 const blockData = {
-  "message0": "html %1",
+  "message0": "html %1 %2",
   "args0": [
+    {
+      "type": "input_dummy"
+    },
     {
       "type": "input_statement",
       "name": "NAME"
