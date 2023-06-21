@@ -27,6 +27,6 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript[blockName] = function(block) {
   var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
-  var code = `"<html>\n${statements_name}\n\</html>"`;
+  var code = `"<html>\n${statements_name}\n</html>"`;
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
