@@ -2369,13 +2369,13 @@ export default (favorites) => {
                 </value>
             </block>
         </category>
-        <category name="Html" colour="#4c7cff">
+        <!--<category name="Html" colour="#4c7cff">
             <label text="Create websites with Html"/>
             <label text="can be used with the 'respond with text' block in creation"/>
             <block type="inv_html"/>
             <block type="inv_html_head"/>
             <block type="inv_html_body"/>
-        </category>
+        </category>-->
         <category name="Requests" colour="#4c6aff">
             <category name="Simple" colour="#4c73ff">
                 <label text="Want to do cool things with json requests? Check out PooPoo API" web-class="boldtext"/>
