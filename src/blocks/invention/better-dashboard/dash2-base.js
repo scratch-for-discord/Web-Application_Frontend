@@ -3,115 +3,68 @@ import Blockly from "blockly/core";
 const blockName = "inv/lars_soft_ui";
 
 const blockData = {
-  "message0": "Start SoftUI Dashboard with %1 Name %2 Port %3 %4 Token %5 License %6 Client ID %7 Client Secret %8 Support Email %9 Owner ID's %10 Required permissions to access %11 Favicon (url) %12 Color Scheme %13 %14 %15 %16 Define Card %17 Inputs %18",
-  "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_value",
-      "name": "name"
-    },
-    {
-      "type": "field_number",
-      "name": "port",
-      "value": 8080
-    },
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_value",
-      "name": "token"
-    },
-    {
-      "type": "input_value",
-      "name": "license"
-    },
-    {
-      "type": "input_value",
-      "name": "client id"
-    },
-    {
-      "type": "input_value",
-      "name": "client secret"
-    },
-    {
-      "type": "input_value",
-      "name": "email"
-    },
-    {
-      "type": "input_value",
-      "name": "owner"
-    },
-    {
-      "type": "input_value",
-      "name": "permissions"
-    },
-    {
-      "type": "input_value",
-      "name": "favicon"
-    },
-    {
-      "type": "field_dropdown",
-      "name": "drop-color",
-      "options": [
-        [
-          "dark",
-          "dark"
-        ],
-        [
-          "pink",
-          "pink"
-        ],
-        [
-          "blue",
-          "blue"
-        ],
-        [
-          "red",
-          "red"
-        ],
-        [
-          "green",
-          "green"
-        ],
-        [
-          "yellow",
-          "yellow"
-        ],
-        [
-          "custom...",
-          "custom"
-        ]
-      ]
-    },
-    {
-      "type": "field_input",
-      "name": "primary",
-      "text": "primary hex"
-    },
-    {
-      "type": "field_input",
-      "name": "secondary",
-      "text": "secondary hex"
-    },
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_statement",
-      "name": "card"
-    },
-    {
-      "type": "input_statement",
-      "name": "input"
-    }
-  ],
-  "inputsInline": false,
-  "colour": 345,
-  "tooltip": "",
-  "helpUrl": ""
+  "message0": "Start Soft UI Dashboard with %1 Token %2 Client ID %3 Client Secret %4 Port %5 Domain %6 Redirect_Uri %7 %8 Dashboard License %9 Owner ID's %10 Style %11 %12 Inputs %13 %14",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "token"
+      },
+      {
+        "type": "input_value",
+        "name": "client_id"
+      },
+      {
+        "type": "input_value",
+        "name": "client_secret"
+      },
+      {
+        "type": "input_value",
+        "name": "port",
+        "check": "Number"
+      },
+      {
+        "type": "input_value",
+        "name": "domain"
+      },
+      {
+        "type": "field_input",
+        "name": "Redirect_Uri",
+        "text": "/discord/callback"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "license"
+      },
+      {
+        "type": "input_value",
+        "name": "owner_array",
+        "check": "Array"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "style"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_statement",
+        "name": "settings"
+      }
+    ],
+    "inputsInline": false,
+    "colour": 330,
+    "tooltip": "",
+    "helpUrl": ""
 }
 
 Blockly.Blocks[blockName] = {
