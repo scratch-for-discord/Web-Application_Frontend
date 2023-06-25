@@ -30,9 +30,9 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.JavaScript['block_type'] = function(block) {
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_one = Blockly.JavaScript.valueToCode(block, 'one', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_two = Blockly.JavaScript.valueToCode(block, 'two', Blockly.JavaScript.ORDER_ATOMIC);
 
-  var code = ``;
+  var code = `${value_one}.concat(${value_two})`;
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
