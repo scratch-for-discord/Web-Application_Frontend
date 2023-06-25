@@ -29,7 +29,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript['block_type'] = function(block) {
+Blockly.JavaScript[blockName] = function(block) {
   var value_one = Blockly.JavaScript.valueToCode(block, 'one', Blockly.JavaScript.ORDER_ATOMIC);
   var value_two = Blockly.JavaScript.valueToCode(block, 'two', Blockly.JavaScript.ORDER_ATOMIC);
 
