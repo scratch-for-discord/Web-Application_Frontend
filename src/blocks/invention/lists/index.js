@@ -1,1 +1,1 @@
-import "concat.js"
+import "./concat.js"
