@@ -7,12 +7,12 @@ const blockData = {
   "args0": [
     {
       "type": "input_value",
-      "name": "NAME",
+      "name": "one",
       "check": "Array"
     },
     {
       "type": "input_value",
-      "name": "NAME",
+      "name": "two",
       "check": "Array"
     }
   ],
@@ -29,6 +29,10 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function(block) {
-  return Blockly.JavaScript.statementToCode(block, 'NAME');
+Blockly.JavaScript['block_type'] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', Blockly.JavaScript.ORDER_ATOMIC);
+
+  var code = ``;
+  return [code, Blockly.JavaScript.ORDER_NONE];
 };
