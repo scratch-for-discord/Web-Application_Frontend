@@ -1,3 +1,3 @@
 import "./fsh/"
 import "./Other/"
-import "./list/"
+import "./lists/"
