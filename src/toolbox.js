@@ -365,12 +365,33 @@ export default (favorites) => {
         <sep gap="32"/>
     </category>
     <category name="Lists" colour="#745ba5">
+        <label text="Create list"/>
         <block type="lists_create_with">
             <mutation items="0"/>
         </block>
         <block type="lists_create_with">
             <mutation items="3"/>
         </block>
+        <block type="lists_getSublist">
+            <mutation at1="true" at2="true"/>
+            <field name="WHERE1">FROM_START</field>
+            <field name="WHERE2">FROM_START</field>
+            <value name="LIST">
+                <block type="variables_get">
+                    <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_split">
+            <mutation mode="SPLIT"/>
+            <field name="MODE">SPLIT</field>
+            <value name="DELIM">
+                <shadow type="text">
+                    <field name="TEXT">,</field>
+                </shadow>
+            </value>
+        </block>
+        <label text="temp"/>
         <block type="lists_repeat">
             <value name="NUM">
                 <shadow type="math_number">
@@ -411,30 +432,11 @@ export default (favorites) => {
                 </block>
             </value>
         </block>
-        <block type="lists_getSublist">
-            <mutation at1="true" at2="true"/>
-            <field name="WHERE1">FROM_START</field>
-            <field name="WHERE2">FROM_START</field>
-            <value name="LIST">
-                <block type="variables_get">
-                    <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
-                </block>
-            </value>
-        </block>
         <block type="push_to_list">
             <value name="LIST">
                 <block type="variables_get">
                     <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
                 </block>
-            </value>
-        </block>
-        <block type="lists_split">
-            <mutation mode="SPLIT"/>
-            <field name="MODE">SPLIT</field>
-            <value name="DELIM">
-                <shadow type="text">
-                    <field name="TEXT">,</field>
-                </shadow>
             </value>
         </block>
         <block type="jg_lists_regex_list_of_matches_from_regex_on_text"/>
