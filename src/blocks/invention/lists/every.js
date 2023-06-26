@@ -18,7 +18,7 @@ const blockData = {
   ],
   "inputsInline": true,
   "output": "Boolean",
-  "colour": 270,
+  "colour": "#745ba5",
   "tooltip": "Tells you if every element on the list follows a test (boolean)",
   "helpUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every"
 }
