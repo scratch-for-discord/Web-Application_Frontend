@@ -1,6 +1,6 @@
 import Blockly from "blockly/core";
 
-const blockName = "inv_list_concat";
+const blockName = "inv_list_every";
 
 const blockData = {
   "message0": "on %1 every value follows %2 ?",
