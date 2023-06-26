@@ -6,7 +6,7 @@ const blockData = {
   "message0": "current element on every",
   "args0": [],
   "inputsInline": true,
-  "output": "[
+  "output": [
     "String",
     "Number"
   ],
