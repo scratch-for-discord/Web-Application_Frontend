@@ -33,6 +33,6 @@ Blockly.JavaScript[blockName] = function(block) {
   var value_one = Blockly.JavaScript.valueToCode(block, 'one', Blockly.JavaScript.ORDER_ATOMIC);
   var value_two = Blockly.JavaScript.valueToCode(block, 'two', Blockly.JavaScript.ORDER_ATOMIC);
 
-  var code = `${value_one}.every(value_two)`;
+  var code = `${value_one}.every(${value_two})`;
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
