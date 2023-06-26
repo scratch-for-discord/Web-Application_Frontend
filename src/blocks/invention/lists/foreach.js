@@ -2,7 +2,8 @@ import Blockly from "blockly/core";
 
 const blockName = "inv_list_foreach";
 
-const blockData = "message0": "for each in list %1 do %2",
+const blockData = {
+  "message0": "for each in list %1 do %2",
   "args0": [
     {
       "type": "input_value",
