@@ -28,7 +28,7 @@ const blockData = {
   ],
   "inputsInline": true,
   "output": "Array",
-  "colour": 270,
+  "colour": "#745ba5",
   "tooltip": "idk what this does use help url",
   "helpUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin"
 }
