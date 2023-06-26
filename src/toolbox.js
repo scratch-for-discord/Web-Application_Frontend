@@ -9,7 +9,7 @@ export default (favorites) => {
         <sep gap="32"/>
         <!-- CATEGORY_CONTENT_VARIABLE_GOES_HERE_897489712470376894703168263487623 -->
     </category>
-    <category name="Favorites" colour="#FFFF00" css-icon="customIcon fa fa-star">
+    <category name="Favorites" colour="#EEEE00" css-icon="customIcon fa fa-star">
         <label text="Add your favorite blocks here by right clicking them and pressing &quot;Add to favorite!&quot;"/>
         ${favorites === null ? "" : favorites.map((c) => `<block type="${c}"/>`)}
     </category>
@@ -372,6 +372,13 @@ export default (favorites) => {
         <block type="lists_create_with">
             <mutation items="3"/>
         </block>
+        <block type="lists_repeat">
+            <value name="NUM">
+                <shadow type="math_number">
+                    <field name="NUM">5</field>
+                </shadow>
+            </value>
+        </block>
         <block type="lists_getSublist">
             <mutation at1="true" at2="true"/>
             <field name="WHERE1">FROM_START</field>
@@ -392,13 +399,6 @@ export default (favorites) => {
             </value>
         </block>
         <label text="temp"/>
-        <block type="lists_repeat">
-            <value name="NUM">
-                <shadow type="math_number">
-                    <field name="NUM">5</field>
-                </shadow>
-            </value>
-        </block>
         <block type="lists_length"/>
         <block type="lists_isEmpty"/>
         <block type="list_contains"/>
