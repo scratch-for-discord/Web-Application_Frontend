@@ -18,7 +18,7 @@ const blockData = {
   ],
   "inputsInline": true,
   "output": "Array",
-  "colour": 270,
+  "colour": "#745ba5",
   "tooltip": "Returns a list that contains the elements of the imputed lists",
   "helpUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"
 }
