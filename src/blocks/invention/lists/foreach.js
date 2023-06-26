@@ -32,7 +32,8 @@ Blockly.JavaScript[blockName] = function(block) {
   var value_one = Blockly.JavaScript.valueToCode(block, 'one', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_two = Blockly.JavaScript.statementToCode(block, 'two');
 
-  var code = `/*block not finished :) 
-  ${value_one}.for*/`;
+  var code = `${value_one}.forEach(element => {
+    ${statements_two}
+  })`;
   return code;
 };
