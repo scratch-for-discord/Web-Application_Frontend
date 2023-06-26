@@ -9,7 +9,7 @@ export default (favorites) => {
         <sep gap="32"/>
         <!-- CATEGORY_CONTENT_VARIABLE_GOES_HERE_897489712470376894703168263487623 -->
     </category>
-    <category name="Favorites" colour="#EEEE33" css-icon="customIcon fa fa-star">
+    <category name="Favorites" colour="#EEEE66" css-icon="customIcon fa fa-star">
         <label text="Add your favorite blocks here by right clicking them and pressing &quot;Add to favorite!&quot;"/>
         ${favorites === null ? "" : favorites.map((c) => `<block type="${c}"/>`)}
     </category>
@@ -444,6 +444,7 @@ export default (favorites) => {
         <block type="lists_reverse"/>
         <block type="inv_list_concat"/>
         <block type="lists_sort"/>
+        <block type="inv_list_flat"/>
         <block type="jg_lists_regex_list_of_matches_from_regex_on_text"/>
         <block type="inv_list_copywithin"/>
         <sep gap="32"/>
