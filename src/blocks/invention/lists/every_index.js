@@ -1,6 +1,6 @@
 import Blockly from "blockly/core";
 
-const blockName = "inv_list_every_element";
+const blockName = "inv_list_every_index";
 
 const blockData = {
   "message0": "every index",
