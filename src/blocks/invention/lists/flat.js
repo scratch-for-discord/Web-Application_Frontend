@@ -13,7 +13,7 @@ const blockData = {
     {
       "type": "input_value",
       "name": "two",
-      "check": "Boolean"
+      "check": "Number"
     }
   ],
   "inputsInline": true,
