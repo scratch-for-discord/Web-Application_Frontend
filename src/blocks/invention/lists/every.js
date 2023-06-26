@@ -3,7 +3,7 @@ import Blockly from "blockly/core";
 const blockName = "inv_list_every";
 
 const blockData = {
-  "message0": "on %1 every value follows %2 ?",
+  "message0": "on list %1 every value follows %2 ?",
   "args0": [
     {
       "type": "input_value",
@@ -33,6 +33,8 @@ Blockly.JavaScript[blockName] = function(block) {
   var value_one = Blockly.JavaScript.valueToCode(block, 'one', Blockly.JavaScript.ORDER_ATOMIC);
   var value_two = Blockly.JavaScript.valueToCode(block, 'two', Blockly.JavaScript.ORDER_ATOMIC);
 
-  var code = `${value_one}.every(${value_two})`;
+  var code = `${value_one}.every(function(element, index, array) {
+  return ${value_two}
+  })`;
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
