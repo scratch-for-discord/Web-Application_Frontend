@@ -1,12 +1,12 @@
 import Blockly from "blockly/core";
 
-const blockName = "inv_fivem_port";
+const blockName = "inv_fivem_ip";
 
 const blockData = {
-  "message0": "server port",
+  "message0": "server ip",
   "output": "String",
   "colour": "#CC8899",
-  "tooltip": "Port of server",
+  "tooltip": "Ip of server",
   "helpUrl": ""
 }
 
@@ -17,6 +17,6 @@ Blockly.Blocks[blockName] = {
 };
 
 Blockly.JavaScript[blockName] = function() {
-  var code = `__S4D__fivem_server.port`;
+  var code = `__S4D__fivem_server.ip`;
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
