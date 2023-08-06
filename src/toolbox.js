@@ -2815,6 +2815,8 @@ export default (favorites) => {
                     </shadow>
                 </value>
             </block>
+            <block type="inv_fivem_host"/>
+            <block type="inv_fivem_port"/>
             <block type="inv_fivem_players"/>
             <block type="inv_fivem_players_o"/>
         </category>
