@@ -4,6 +4,7 @@ const blockName = "inv_fivem_players_o";
 
 const blockData = {
   "message0": "players",
+  "output": "Array",
   "colour": "#CC8899",
   "tooltip": "players in the server",
   "helpUrl": ""
