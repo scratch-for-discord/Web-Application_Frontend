@@ -15,7 +15,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function(block) {
+Blockly.JavaScript[blockName] = function() {
   var code = `__S4D__players`;
   return [code, Blockly.javascript.ORDER_NONE];
 };
