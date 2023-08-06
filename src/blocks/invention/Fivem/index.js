@@ -1,3 +1,3 @@
 import './server.js'
-import './player.js'
+import './players.js'
 import './players_o.js'
