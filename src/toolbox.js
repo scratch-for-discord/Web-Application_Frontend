@@ -2808,7 +2808,13 @@ export default (favorites) => {
         </category>
         <category name="Fivem" colour="#CC8899">
             <label text="Fivem"/>
-            <block type="inv_fivem_server"/>
+            <block type="inv_fivem_server">
+                <value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT">server ip</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="inv_fivem_players"/>
             <block type="inv_fivem_players_o"/>
         </category>
