@@ -1,5 +1,4 @@
 import './server.js'
-import './host.js'
-import './port.js'
+import './ip.js'
 import './players.js'
 import './players_o.js'
