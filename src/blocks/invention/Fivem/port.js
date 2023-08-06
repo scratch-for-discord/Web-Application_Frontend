@@ -3,7 +3,7 @@ import Blockly from "blockly/core";
 const blockName = "inv_fivem_port";
 
 const blockData = {
-  "message0": "port",
+  "message0": "server port",
   "output": "String",
   "colour": "#CC8899",
   "tooltip": "Port of server",
