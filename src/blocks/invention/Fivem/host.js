@@ -3,7 +3,7 @@ import Blockly from "blockly/core";
 const blockName = "inv_fivem_host";
 
 const blockData = {
-  "message0": "host",
+  "message0": "server host",
   "output": "String",
   "colour": "#CC8899",
   "tooltip": "Host of server",
