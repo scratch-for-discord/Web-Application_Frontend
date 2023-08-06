@@ -22,8 +22,8 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function(block, generator) {
-  var value_name = generator.valueToCode(block, 'NAME', javascript.Order.ATOMIC);
+Blockly.JavaScript[blockName] = function(block) {
+  var value_name = Blockly.JavaScript.valueToCode(block, 'NAME', javascript.Order.ATOMIC);
   var code = `const __S4D__fivem_server = new __S4D__fivem.DiscordFivemApi("${value_name}")`;
   return code;
 };
