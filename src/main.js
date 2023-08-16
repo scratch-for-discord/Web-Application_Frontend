@@ -175,10 +175,10 @@ Vue.mixin({
     // check if d.js is v13
     if (!require('./package.json').dependencies['discord.js'].startsWith("^13.")) {
       let file = JSON.parse(fs.readFileSync('package.json'))
-      file.dependencies['discord.js'] = '^13.15.1'
+      file.dependencies['discord.js'] = '^13.16.0'
       fs.writeFileSync('package.json', JSON.stringify(file, null, 4))
       exec('npm i')
-      throw new Error("Seems you arent using v13 please re-run or run \`npm i discord.js@13.12.0\`");
+      throw new Error("Seems you arent using v13 please re-run or run \`npm i discord.js@13.16.0\`");
     }
 
     // check if discord-logs is v2
