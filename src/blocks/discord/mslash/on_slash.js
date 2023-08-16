@@ -24,7 +24,6 @@ Blockly.Blocks[blockName] = {
 Blockly.JavaScript[blockName] = function (block) {
     const statements = Blockly.JavaScript.statementToCode(block, "STATEMENTS");
     const code = `s4d.client.on('interactionCreate', async (interaction) => {
-        let member = interaction.guild.members.cache.get(interaction.member.user.id)
         ${statements}
     });
     `;
