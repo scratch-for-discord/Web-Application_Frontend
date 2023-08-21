@@ -71,8 +71,8 @@ Blockly.Blocks[blockName] = {
 Blockly.JavaScript[blockName] = function(block) {
   var dropdown_get = block.getFieldValue('get');
   var statements_then = Blockly.JavaScript.statementToCode(block, 'then');
-  var code = `eval(\`__S4D__fivem_server.${dropdown_get}().then(async(__S4D__${dropdown_get} => {
+  var code = `__S4D__fivem_server.${dropdown_get}().then(async(__S4D__${dropdown_get} => {
     ${statements_then}
-  }))\`);`
+  }));`
   return code;
 };
