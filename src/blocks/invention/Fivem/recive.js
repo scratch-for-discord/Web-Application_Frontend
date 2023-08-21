@@ -46,13 +46,6 @@ const blockData = {
           "getLicenseKey"
         ]
       ]
-    },
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_statement",
-      "name": "then"
     }
   ],
   "output": "Array",
