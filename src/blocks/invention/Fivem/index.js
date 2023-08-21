@@ -1,4 +1,4 @@
 import './server.js'
 import './ip.js'
-import './players.js'
+import './get.js'
 import './players_o.js'
