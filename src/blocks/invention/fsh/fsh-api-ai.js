@@ -1,6 +1,6 @@
 import Blockly from "blockly/core";
 
-const blockName = "inv_fsh_api_craiyon";
+const blockName = "inv_fsh_api_ai";
 
 const blockData = {
   "message0": "generate craiyon image with prompt %1",
