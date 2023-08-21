@@ -2816,8 +2816,9 @@ export default (favorites) => {
                 </value>
             </block>
             <block type="inv_fivem_ip"/>
-            <block type="inv_fivem_players"/>
-            <block type="inv_fivem_players_o"/>
+            <label text="Server atributes"/>
+            <block type="inv_fivem_get"/>
+            <block type="inv_fivem_recive"/>
         </category>
         <category name="Fsh API" colour="#50494e">
             <label text="Fsh api"/>
