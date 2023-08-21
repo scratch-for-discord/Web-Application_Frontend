@@ -67,7 +67,7 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript[blockName] = function() {
+Blockly.JavaScript[blockName] = function(block) {
   var dropdown_get = block.getFieldValue('get');
   var code = `__S4D__${dropdown_get}`;
   return [code, Blockly.JavaScript.ORDER_NONE];
