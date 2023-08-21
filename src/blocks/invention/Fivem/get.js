@@ -58,7 +58,7 @@ const blockData = {
   "previousStatement": null,
   "nextStatement": null,
   "colour": "#CC8899",
-  "tooltip": "Gets players in the fivem server",
+  "tooltip": "Gets something in the fivem server",
   "helpUrl": ""
 }
 
