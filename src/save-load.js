@@ -69,7 +69,7 @@ export default async function register(self) {
 	}
 	/* Domain change swal */
 	if (window.location.hostname == "scratch-for-discord.com") {
-		swal.fire({
+		Swal.fire({
 			title: 'Hey this domain is going to be removed',
 			text: "Do you want to be taken to the new domain?",
 			icon: 'warning',
