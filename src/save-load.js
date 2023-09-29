@@ -18,7 +18,7 @@ const DISABLED_EVENTS = [
 ];
 
 export default async function register(self) {
-  if (window.location.href.includes("scratch-for-discord.com")) {
+  if (!window.location.href.includes("https://s4d.discodes.xyz")) {
     Swal.fire({
       title: "Move to s4d.discodes.xyz",
       html: "You are using the official Scratch For Discord editor, however this URL will soon be deleted so please use <a href='https://s4d.discodes.xyz/'>s4d.discodes.xyz</a> instead!",
