@@ -18,6 +18,19 @@ const DISABLED_EVENTS = [
 ];
 
 export default async function register(self) {
+  if (window.location.href.includes("scratch-for-discord.com")) {
+    Swal.fire({
+      title: "Move to s4d.discodes.xyz",
+      html: "You are using the official Scratch For Discord editor, however this URL will soon be deleted so please use <a href='https://s4d.discodes.xyz/'>s4d.discodes.xyz</a> instead!",
+      icon: "warning",
+      showDenyButton: false,
+      showCancelButton: false,
+      confirmButtonText: "Ok",
+      preConfirm: async () => {
+        window.location.href = "https://s4d.discodes.xyz"
+      },
+    })
+  }
   console.log('started!')
   setTimeout(async () => {
     const workspace = self.$store.state.workspace;
