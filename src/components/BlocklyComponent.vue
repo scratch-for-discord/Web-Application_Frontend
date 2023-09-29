@@ -18,25 +18,6 @@ import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 var renderer = "zelos";
 
-/* Domain change swal */
-if(window.location.hostname == "scratch-for-discord.com"){
-	swal.fire({
-    title: 'Hey this domain is going to be removed',
-    text: "Do you want to be taken to the new domain?",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes!',
-	  cancelButtonText: 'No.'
-  }).then((result) => {
-    if (result.isConfirmed) {
-		  console.log('redirecting...');
-		  window.location.assign("https://s4d.discodes.xyz");
-    };
-  });
-};
-
 switch (String(window.location.pathname).replace(/\//gmi, "")) {
   case 'rge':
     renderer = "geras"
