@@ -276,7 +276,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
         code.push('s4d.database = new Database(\'./database.json\')')
     }
     if (js.includes("OpenAIApi")) {
-        array.push('const { Configuration, OpenAIApi } = require("openai");')
+        array.push('const OpenAI = require("openai");')
     }
     if (js.includes("_S4D_inventionFSHapi")) {
         code.push(`async function _S4D_inventionFSHapi(_S4D_fshurl, _S4D_fshquery) {

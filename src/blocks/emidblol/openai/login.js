@@ -41,10 +41,9 @@ blockly.Blocks[blockName] = {
 blockly.JavaScript[blockName] = function (block) {
     const key = blockly.JavaScript.valueToCode(block, "token", blockly.JavaScript.ORDER_ATOMIC);
     const code = `
-        const configuration = new Configuration({
+        const openai = new OpenAI({
             apiKey: ${key},
         });
-        const openai = new OpenAIApi(configuration);
     `;
     return code;
 };

@@ -48,7 +48,7 @@ Blockly.Blocks[blockName] = {
 Blockly.JavaScript[blockName] = function (block) {
     const type = block.getFieldValue("mimeType");
     const then = Blockly.JavaScript.statementToCode(block, "then");
-    const code = `image.getBuffer(jimp.${type}, async (buffer) => {
+    const code = `image.getBuffer(jimp.${type}, async (err, buffer) => {
     ${then}
 });
 `;

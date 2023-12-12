@@ -17,6 +17,7 @@ const customBlockModule = require("./NavigationBar/cbmodule");
 import { disableUnapplicable } from "../restrictions";
 import toolbox from "../toolbox";
 var renderer = "zelos";
+
 switch (String(window.location.pathname).replace(/\//gmi, "")) {
   case 'rge':
     renderer = "geras"
