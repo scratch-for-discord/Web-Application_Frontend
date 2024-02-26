@@ -293,4 +293,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();`)
             return _S4D_fshresponse;
         }`)
     }
+    if (js.includes("__S4D__fivem")) {
+        array.push('const __S4D__fivem = require("discord-fivem-api");')
+    }
 }

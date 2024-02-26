@@ -2806,6 +2806,20 @@ export default (favorites) => {
             <block type="generate_image_openai"/>
             <block type="text_completion_openai" />
         </category>
+        <category name="Fivem" colour="#CC8899">
+            <label text="Fivem"/>
+            <block type="inv_fivem_server">
+                <value name="NAME">
+                    <shadow type="text">
+                        <field name="TEXT">server ip</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="inv_fivem_ip"/>
+            <label text="Server atributes"/>
+            <block type="inv_fivem_get"/>
+            <block type="inv_fivem_recive"/>
+        </category>
         <category name="Fsh API" colour="#50494e">
             <label text="Fsh api"/>
             <label text="Text api"/>
