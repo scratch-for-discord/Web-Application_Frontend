@@ -1,6 +1,6 @@
 import * as Blockly from "blockly/core";
 
-const blockName = "monaco_create_server";
+const blockName = "monaco_edit_permissions";
 
 
 const blockData = {
@@ -12,8 +12,24 @@ const blockData = {
       "check": "Channel"
     },
     {
-     "type": "field_dropdown"
-    
+     "type": "field_dropdown",
+      "name": "action",
+      "options": [
+        [
+          "allow",
+          "allow"
+        ],
+        [
+          "deny",
+          "deny"
+        ]
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "member",
+      "check": "Role"
+    },
     {
       "type": "input_statement",
       "name": "then"
@@ -22,7 +38,7 @@ const blockData = {
     "colour": "#4C97FF",
 "previousStatement": null,
 "nextStatement": null,
-    "tooltip": "Create a discord server. Only available if the bot is in fewer than 10 servers.",
+    "tooltip": "Edit more than one permission of a role/member.",
     "helpUrl": ""
 };
 
@@ -32,8 +48,9 @@ Blockly.Blocks[blockName] = {
     }
 };
 
-Blockly.JavaScript['monaco_create_server'] = function(block) {
-  var value_create = Blockly.JavaScript.valueToCode(block, 'create', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['monaco_edit_permissions'] = function(block) {
+  var value_channel = Blockly.JavaScript.valueToCode(block, 'channel', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_action = Blockly.JavaScript.valueToCode(block, 'action', Blockly.JavaScript.ORDER_ATOMIC);
   var statements = Blockly.JavaScript.statementToCode(block, 'then');
   // TODO: Assemble JavaScript into code variable.
   var guilder = `s4d.client.guilds.create(String(${value_create})).then(async newServer => {
