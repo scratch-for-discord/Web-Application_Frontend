@@ -191,12 +191,6 @@ export default {
         this.$root.$i18n.locale = this.$store.state.blocklyLocale;
     },
     mounted() {
-        if (String(window.location.pathname).replace(/\//gmi, "") == "v2") {
-            window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0"
-        }
-        if (String(window.location.pathname).replace(/\//gmi, "") == "broken") {
-            window.location.href = "https://scratch-for-discord-broken.jeremygamer13.repl.co/"
-        }
         console.log("...wait a second... a user?")
         console.log("i gotta tell them!")
         console.log(
@@ -205,14 +199,6 @@ export default {
             "color:DarkRed;font-family:system-ui;font-size:2rem;-webkit-text-stroke: 1px black;font-weight:bold"
         )
         console.log("...")
-        for (let i = 0; i < 3; i++) {
-            console.log("")
-            console.log(
-                "%cWARNING! %cIf you use S4D forums, be careful what you paste into here! You are most likely going to get your account hacked.",
-                "color:red;font-family:system-ui;font-size:2rem;-webkit-text-stroke: 1px black;font-weight:bold",
-                "color:white;font-family:system-ui;font-size:1.75rem;-webkit-text-stroke: 1px black;font-weight:bold"
-            )
-        }
         if (!("ScratchNative" in window) && window.parent?.ScratchNative) window.ScratchNative = window.parent.ScratchNative;
         const tourDone = localStorage.getItem('tourDone');
         if (tourDone !== null) this.$store.commit('setTour', {
