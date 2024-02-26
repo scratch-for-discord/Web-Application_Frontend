@@ -205,11 +205,11 @@ export default {
         setTimeout(() => {
             let urlParams = new URLSearchParams(window.location.search);
             if (urlParams.has('exampleid')) {
-                fetch(`https://469exampletest.jeremygamer13.repl.co/api/getExample?id=${urlParams.get("exampleid")}`)
+                fetch(`https://s4d-examples.fsh.plus/api/getExample?id=${urlParams.get("exampleid")}`)
                     .then(async (result) => {
                         result.json().then((json) => {
                             const lkjgenwhikgu4ewkjn = document.createElement('div');
-                            displaySwalPopupForUserExample(json, lkjgenwhikgu4ewkjn, urlParams.get("exampleid"), "https://469exampletest.jeremygamer13.repl.co/", this.$swal, this.$store.state.workspace, this.$toast)
+                            displaySwalPopupForUserExample(json, lkjgenwhikgu4ewkjn, urlParams.get("exampleid"), "https://s4d-examples.fsh.plus/", this.$swal, this.$store.state.workspace, this.$toast)
                         })
                     })
             }
@@ -255,9 +255,9 @@ export default {
         },
         userexamples() {
             const workspace = this.$store.state.workspace
-            let url = "https://469exampletest.jeremygamer13.repl.co/"
+            let url = "https://s4d-examples.fsh.plus/"
             if (window.isInS4DDebugMode) {
-                url = prompt("Examples server URL to use?", "https://469exampletest.jeremygamer13.repl.co/")
+                url = prompt("Examples server URL to use?", "https://s4d-examples.fsh.plus/")
                 if (!url.endsWith("/")) url += "/"
             }
             const SERVER = url
