@@ -15,10 +15,10 @@ export default {
                 width: "1000px",
                 html: `
                 <h1><span>Developers of </span><span style="color:#15a9e8">Scratch For Discord!</span></h1>
-                    <h2><b>Preview 469:</b></h2>
+                    <h2><b>Preview 474:</b></h2>
                     <b><p>
-                    <h2><b>Management:</b></h2>
-                    <span style="color:#2aa9bd">Malix</span>
+                    <span style="color:#4f4954">inventionpro</span>
+                    <h2><b>Preview 469:</b></h2>
                     <h2><b>Developers:</b></h2>
                     <span style="color:#2aa9bd">frostzzone</span>,
                     <span style="color:#ad6f39">RetroBTW</span>,
