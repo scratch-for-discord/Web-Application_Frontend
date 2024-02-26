@@ -9,10 +9,11 @@ const blockData = {
        {
       "type": "input_value",
       "name": "channel",
-      "check": "String"
+      "check": "Channel"
     },
     {
-     "type": "input_value"
+     "type": "field_dropdown"
+    
     {
       "type": "input_statement",
       "name": "then"
