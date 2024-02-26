@@ -44,7 +44,7 @@ const blockData = {
 							["USE_SOUNDBOARD", "USE_SOUNDBOARD"],
 							["CREATE_EVENTS", "CREATE_EVENTS"],
 							["USE_EXTERNAL_SOUNDS", "USE_EXTERNAL_SOUNDS"],
-							["SEND_VOICE_MESSAGES", '"SEND_VOICE_MESSAGES"] 
+							["SEND_VOICE_MESSAGES", "SEND_VOICE_MESSAGES"] 
             ]
         }
     ],
