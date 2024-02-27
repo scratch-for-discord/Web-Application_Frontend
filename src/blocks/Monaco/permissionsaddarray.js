@@ -50,13 +50,13 @@ Blockly.Blocks[blockName] = {
 
 Blockly.JavaScript['monaco_edit_permissions'] = function(block) {
   var value_channel = Blockly.JavaScript.valueToCode(block, 'channel', Blockly.JavaScript.ORDER_ATOMIC);
-  var value_action = Blockly.JavaScript.valueToCode(block, 'action', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_action = block.getFieldValue(block, 'action', Blockly.JavaScript.ORDER_ATOMIC);
   var value_member = Blockly.JavaScript.valueToCode(block, 'member', Blockly.JavaScript.ORDER_ATOMIC);
   var statements = Blockly.JavaScript.statementToCode(block, 'then');
   // TODO: Assemble JavaScript into code variable.
   var guilder = `s4d.clients.channels.cache.get('${value_channel}').edit(
     {
-    PermissionOverwrites:
+    permissionOverwrites:
     id: '${value_member}',
     ${value_action}: [
 ${statements}
