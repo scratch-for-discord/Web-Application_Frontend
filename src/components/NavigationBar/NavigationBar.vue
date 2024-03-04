@@ -16,7 +16,6 @@
                 <!--<LanguageMenu></LanguageMenu>-->
                 <ExamplesMenu style="font-size: small;"></ExamplesMenu>
                 <Socials style="font-size: small;"></Socials>
-                <Forums style="font-size: small;"></Forums>
                 <drtrrlrlrlrlrl style="font-size: small;"></drtrrlrlrlrlrl>
                 <changelog style="font-size: small;"></changelog>
                 <shortcuts style="font-size: small;"></shortcuts>
@@ -69,13 +68,11 @@ import CodeModal from "./CodeModal.vue";
 //import ToolboxModal from "./ToolboxModal.vue";
 import Socials from "./socials.vue";
 import Credit from "./Credit";
-import Forums from "./ForumsMenu.vue";
 import drtrrlrlrlrlrl from "./data.vue"
 import changelog from "./changelog.vue"
 import localforage from 'localforage';
 import r from "./requires";
 import swal from "sweetalert2";
-import ForumsMenu from "./ForumsMenu.vue";
 export default {
     name: "navbar",
     components: {
@@ -87,11 +84,9 @@ export default {
     //ToolboxModal,
     shortcuts,
     Credit,
-    Forums,
     drtrrlrlrlrlrl,
     changelog,
-    Socials,
-    ForumsMenu
+    Socials
 },
     computed: {
         // configurationValidated: function () {
