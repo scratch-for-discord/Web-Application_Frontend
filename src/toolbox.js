@@ -1943,6 +1943,7 @@ export default (favorites) => {
         <block type="monaco_toggle_follow_channel"/>
         <block type="renamec"/>
         <block type="channel_perms"/>
+        <block type="monaco_edit_permissions"/>
         <block type="set_perms_parent"/>
         <block type="frost_slowmode">
             <value name="CHANNEL">
