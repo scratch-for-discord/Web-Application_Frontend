@@ -9,7 +9,7 @@ export default (favorites) => {
         <sep gap="32"/>
         <!-- CATEGORY_CONTENT_VARIABLE_GOES_HERE_897489712470376894703168263487623 -->
     </category>
-    <category name="Favorites" colour="#FFFF00" css-icon="customIcon fa fa-star">
+    <category name="Favorites" colour="#EECC33" css-icon="customIcon fa fa-star">
         <label text="Add your favorite blocks here by right clicking them and pressing &quot;Add to favorite!&quot;"/>
         ${favorites === null ? "" : favorites.map((c) => `<block type="${c}"/>`)}
     </category>
@@ -365,6 +365,7 @@ export default (favorites) => {
         <sep gap="32"/>
     </category>
     <category name="Lists" colour="#745ba5">
+        <label text="Create list"/>
         <block type="lists_create_with">
             <mutation items="0"/>
         </block>
@@ -378,23 +379,41 @@ export default (favorites) => {
                 </shadow>
             </value>
         </block>
+        <block type="lists_getSublist">
+            <mutation at1="true" at2="true"/>
+            <field name="WHERE1">FROM_START</field>
+            <field name="WHERE2">FROM_START</field>
+            <value name="LIST">
+                <block type="variables_get">
+                    <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
+                </block>
+            </value>
+        </block>
+        <block type="lists_split">
+            <mutation mode="SPLIT"/>
+            <field name="MODE">SPLIT</field>
+            <value name="DELIM">
+                <shadow type="text">
+                    <field name="TEXT">,</field>
+                </shadow>
+            </value>
+        </block>
+        <label text="List data"/>
         <block type="lists_length"/>
         <block type="lists_isEmpty"/>
         <block type="list_contains"/>
-        <block type="lists_sort"/>
-        <block type="lists_reverse"/>
-        <block type="lists_indexOf">
-            <field name="END">FIRST</field>
+        <block type="lists_getIndex">
+            <mutation statement="false" at="true"/>
+            <field name="MODE">GET</field>
+            <field name="WHERE">FROM_START</field>
             <value name="VALUE">
                 <block type="variables_get">
                     <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
                 </block>
             </value>
         </block>
-        <block type="lists_getIndex">
-            <mutation statement="false" at="true"/>
-            <field name="MODE">GET</field>
-            <field name="WHERE">FROM_START</field>
+        <block type="lists_indexOf">
+            <field name="END">FIRST</field>
             <value name="VALUE">
                 <block type="variables_get">
                     <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
@@ -411,16 +430,6 @@ export default (favorites) => {
                 </block>
             </value>
         </block>
-        <block type="lists_getSublist">
-            <mutation at1="true" at2="true"/>
-            <field name="WHERE1">FROM_START</field>
-            <field name="WHERE2">FROM_START</field>
-            <value name="LIST">
-                <block type="variables_get">
-                    <field name="VAR" id="fztpO]@!)|*c81-vAZ)P">list</field>
-                </block>
-            </value>
-        </block>
         <block type="push_to_list">
             <value name="LIST">
                 <block type="variables_get">
@@ -428,16 +437,18 @@ export default (favorites) => {
                 </block>
             </value>
         </block>
-        <block type="lists_split">
-            <mutation mode="SPLIT"/>
-            <field name="MODE">SPLIT</field>
-            <value name="DELIM">
-                <shadow type="text">
-                    <field name="TEXT">,</field>
-                </shadow>
-            </value>
-        </block>
+        <block type="inv_list_foreach"/>
+        <block type="inv_list_foreach_element"/>
+        <block type="inv_list_every"/>
+        <block type="inv_list_every_element"/>
+        <block type="inv_list_every_index"/>
+        <label text="List actions"/>
+        <block type="lists_reverse"/>
+        <block type="inv_list_concat"/>
+        <block type="inv_list_flat"/>
+        <block type="lists_sort"/>
         <block type="jg_lists_regex_list_of_matches_from_regex_on_text"/>
+        <block type="inv_list_copywithin"/>
         <sep gap="32"/>
     </category>
     <category name="Colors" colour="#a5745b">

@@ -1,0 +1,8 @@
+import "./concat.js"
+import "./copywithin.js"
+import "./every.js"
+import "./every_element.js"
+import "./every_index.js"
+import "./flat.js"
+import "./foreach.js"
+import "./foreach_element.js"
